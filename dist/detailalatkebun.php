@@ -31,13 +31,13 @@ var_dump($harga_alats);
 
   <section class="text-gray-600 body-font overflow-hidden">
     <div class="container px-2 py-24 mx-auto">
-      <div class="lg:w-4/5 mx-auto flex flex-wrap">
-        <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="<?php echo $alats["alat_gambar"]; ?>" />
+      <div class="lg:w-4/5 mx-auto flex flex-wrap justify-center">
+        <img alt="ecommerce" width="350" height="250" class="object-cover object-center rounded-xl border-green-600 border-opacity-50 border-2 border-solid" src="<?php echo $alats["alat_gambar"]; ?>" />
         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-          <h2 class="text-sm title-font text-gray-500 tracking-widest"><?php echo $kategori_alats["kategori_alat_nama"]; ?></h2>
+          <h2 class="text-lg title-font text-gray-500 tracking-widest"><?php echo $kategori_alats["kategori_alat_nama"]; ?></h2>
           <h1 class="text-gray-900 text-3xl title-font font-medium mb-1"><b><?php echo $alats["alat_nama"]; ?></b></h1>
-          <p class="leading-relaxed"><?php echo $alats["alat_desc"]; ?></p>
-          <div class="py-6 flex flex-col justify-center sm:py-12">
+          <p class="leading-relaxed text-lg"><?php echo $alats["alat_desc"]; ?></p>
+          <div class="py-6 flex flex-col justify-center sm:py-8">
             <div class="grid lg:grid-cols-2 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 px-4">
               <!-- START SMALL CARD ROUNDED -->
               <?php foreach ($harga_alats as $harga_alat) { 
@@ -45,7 +45,7 @@ var_dump($harga_alats);
                   $mitras = query("SELECT * FROM mitra WHERE mitra_id=$mitra_id");
                   foreach ($mitras as $mitra) {                 
                 ?>
-              <div class="bg-gray-100  | p-4 border-solid rounded border-2 | flex justify-around cursor-pointer | hover:bg-green-400 dark:hover:bg-green-600 hover:border-transparent | transition-colors duration-500">
+              <div class="bg-gray-100 border-green-600 dark:bg-gray-800 bg-opacity-95 border-opacity-60  | p-4 border-solid  rounded-2xl border-2 | flex justify-around cursor-pointer | hover:bg-green-400 dark:hover:bg-green-600 hover:border-transparent | transition-colors duration-500">
                 <img class="w-16 h-16 object-cover" src="img\<?php echo $mitra["mitra_foto"]; ?>.jpg" alt="" />
                 <div class="flex flex-col justify-center">
                   
@@ -63,14 +63,14 @@ var_dump($harga_alats);
   </section>
 
   <section>
-    <h1 class=" text-center text-gray-900 text-3xl title-font font-medium mb-1 py-1"><b>Alat Sejenis</b></h1>
+    <h1 class=" text-center text-green-800 text-3xl title-font font-medium mb-1 py-1"><b>Alat Sejenis</b></h1>
     <div class="flex items-center justify-center">
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
         <?php foreach ($alatss as $alat) { ?>
           <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
             <div class="mt-8">
               <div class="flex space-x-2">
-                <img src="<?php echo $alat["alat_gambar"]?>" class="w-auto" style="border-radius: 5%" />
+                <img src="<?php echo $alat["alat_gambar"]?>" class="object-contain md:object-cover h-60 w-full" style="border-radius: 5%" />
               </div>
               <p class="text-xl font-semibold my-2"><a href="detailalatkebun.html"><?php echo $alat["alat_nama"]?></a></p>
                 <div class="flex space-x-2 text-black-400 text-sm">

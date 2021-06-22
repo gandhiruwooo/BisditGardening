@@ -37,8 +37,8 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 <?php include_once 'layout/navbar.php';?>
 
 <section class="text-gray-600 body-font">
-	<h1 class="text-2xl font-bold title-font mt-20 text-green-800 text-center">Progress Pertumbuhan <?php echo $kategori_growth["kategori_growth_nama"]; ?></h1>
-	<div class="container px-5 py-24 mx-auto flex flex-wrap flex-col">
+	<h1 class="text-4xl font-bold title-font mt-20 text-green-800 text-center">Progress Pertumbuhan <?php echo $kategori_growth["kategori_growth_nama"]; ?></h1>
+	<div class="container px-5 py-20 mx-auto flex flex-wrap flex-col">
 		<div class="flex mx-auto flex-wrap mb-20">
 			<?php foreach ($fase_pertanamans as $fase_pertanaman) {
 				$fase_growth_id = $fase_pertanaman["fase_growth_id"];
@@ -57,7 +57,7 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 		</div>
 
 		<div class="flex flex-col text-center w-full pb-2">
-			<h1 class="text-2xl font-bold title-font mb-4 text-green-800 text-center"><?php echo $fase_growth_utama["fase_growth_nama"]; ?></h1>
+			<h1 class="text-3xl font-bold title-font mb-4 text-green-800 text-center"><?php echo $fase_growth_utama["fase_growth_nama"]; ?></h1>
 			<p class="lg:w-2/3 mx-auto leading-relaxed text-base"><?php echo $fase_growth_utama["fase_growth_desc"]; ?></p>
 		</div>
 
@@ -67,7 +67,7 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 					<div class="flex flex-col md:flex-row">
 	
 						<div class="bg-white mx-auto">
-							<h1 class="text-2xl font-bold title-font mb-4 text-green-800 text-center py-4"> Kegiatan </h1>
+							<h1 class="text-3xl font-bold title-font mb-4 text-green-800 text-center py-4"> Kegiatan </h1>
 							
 							<?php foreach ($aktivitas_growths as $aktivitas_growth) { ?>
 							<div class="mb-4">
@@ -92,7 +92,7 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 			<div class="flex flex-col">
 				<div class="relative py-3 sm:max-w-xl sm:mx-auto flex flex-col">
 					<div class="p-3 mx-auto">
-						<a class="text-2xl font-bold text-green-800"> Tingkatan</a>
+						<a class="text-3xl font-bold text-green-800">Tingkatan</a>
 					</div>
 					<div class="w-30 h-30 border rounded-full border-grey-900 shadow">
 						<img src="https://img.icons8.com/plasticine/200/000000/user-male.png" />
@@ -109,7 +109,7 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 		if (empty($fase_pertanaman_masalahs)){} else{?>	
 		<div class="container px-5 py-16 mx-auto">
 			<div class="text-center mb-5">
-				<h1 class="text-2xl font-bold title-font mb-4 text-green-800 text-center">Masalah Seputar
+				<h1 class="text-3xl font-bold title-font mb-4 text-green-800 text-center">Masalah Seputar
 				<?php echo $fase_growth_utama["fase_growth_nama"]; ?></h1>
 				<p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Masalah yang sering dialami oleh sebagian besar
 					pelaku saat melakukan tahap <?php echo $fase_growth_utama["fase_growth_nama"]; ?> tanaman</p>
@@ -140,7 +140,7 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 		if (empty($fase_pertanaman_qnas)){} else{?>
 		<div class="container px-5 pb-8 mx-auto">
 			<div class="text-center mb-5">
-				<h1 class="text-2xl font-bold title-font mb-4 text-green-800 text-center">Pertanyaan Seputar
+				<h1 class="text-3xl font-bold title-font mb-4 text-green-800 text-center">Pertanyaan Seputar
 				<?php echo $fase_growth_utama["fase_growth_nama"]; ?></h1>
 				<p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Pertanyaan yang sering diajukan oleh sebagian
 					besar pelaku saat melakukan tahap <?php echo $fase_growth_utama["fase_growth_nama"]; ?> tanaman</p>
@@ -169,7 +169,7 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 						<div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
 							<div class="mt-8">
 								<div class="flex space-x-2">
-									<img src="https://dummyimage.com/720x600" class="w-auto" style="border-radius: 5%" />
+									<img src="https://dummyimage.com/720x600" class="object-contain md:object-cover h-60 w-full" style="border-radius: 5%" />
             					</div>
 									<p class="text-xl font-semibold my-2">Alat Kebun 1</p>
 									<div class="flex space-x-2 text-black-400 text-sm">

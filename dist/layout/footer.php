@@ -16,15 +16,12 @@
         </div>
         <div class="w-full sm:w-1/5 flex flex-col space-y-4">
           <a class="opacity-100"><b>Informasi</b></a>
-          <a class="opacity-100">Tentang Kami</a>
-          <a class="opacity-100" href="listmitra.html">Mitra Kami</a>
-          <a class="opacity-100">Privacy Policy</a>
-          <a class="opacity-100">Syarat dan Kebijakan</a>
+          <a class="opacity-100" href="listmitra.php">Mitra Kami</a>
         </div>
         <div class="w-full sm:w-1/5 flex flex-col space-y-4">
           <a class="opacity-100"><b>Produk dan Layanan</b></a>
-          <a class="opacity-100" href="caritanaman.html">Tanaman</a>
-          <a class="opacity-100" href="carialatberkebun.html">Alat Berkebun</a>
+          <a class="opacity-100" href="caritanaman.php?id=1">Tanaman</a>
+          <a class="opacity-100" href="carialat.php?id=1">Alat Berkebun</a>
         </div>
         <div class="w-full sm:w-1/5 pt-6 flex items-end mb-1">
           <div class="flex flex-row space-x-4">

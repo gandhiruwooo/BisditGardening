@@ -5,7 +5,34 @@
 <?php include_once 'layout/header.php';
 require 'layout/function.php';
 
-$galeri_pajangans = query("SELECT * FROM galeri_pajangan");
+$galeri_pajangan_all = query("SELECT * FROM galeri_pajangan");
+
+//pagination
+$jumlah_data = 4;
+$total_data = count($galeri_pajangan_all);
+$jumlah_pagination = ceil($total_data / $jumlah_data);
+
+
+echo $jumlah_data;
+echo $total_data;
+echo $jumlah_pagination;
+
+
+
+if (isset($_GET['halaman'])){
+	$halaman_aktif = $_GET['halaman'];
+  if ($halaman_aktif==0){$halaman_aktif=1;}else{}
+} else { $halaman_aktif = 1;}
+
+$i=$halaman_aktif;
+echo $halaman_aktif;
+
+$data_awal = ($halaman_aktif * $jumlah_data ) - $jumlah_data;
+echo $data_awal;
+
+$galeri_pajangans = query("SELECT * FROM galeri_pajangan LIMIT $data_awal,$jumlah_data");
+
+//end pagination
 
 ?>
 <title>Cari Tanaman</title>
@@ -26,30 +53,40 @@ $galeri_pajangans = query("SELECT * FROM galeri_pajangan");
     <h1 class="text-3xl text-center text-green-800 md:text-3xl font-bold mb-2">  Galeri Pajangan Tanaman </h1>
 </div>
 
- <!--Pagination-->
- <div class="flex flex-col items-center my-7">
-  <ul class="flex">
-    <li class="mx-1 px-3 py-2 bg-gray-200 text-green-600 rounded-lg">
-        <a class="flex items-center font-bold" href="#">
-            <span class="mx-1">previous</span>
-        </a>
-    </li>
-    <li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-        <a class="font-bold" href="#">1</a>
-    </li>
-    <li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-        <a class="font-bold" href="#">2</a>
-    </li>
-    <li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-        <a class="font-bold" href="#">3</a>
-    </li>
-    <li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-        <a class="flex items-center font-bold" href="#">
-            <span class="mx-1">Next</span>
-        </a>
-    </li>
-  </ul>
-  </div>
+		<!--Pagination-->
+		<?php if ($total_data<=$jumlah_data){} else{?>
+		<?php $i = $halaman_aktif ;?>  
+		<div class="flex flex-col items-center my-7">
+		<ul class="flex">
+		<a class="flex items-center font-bold" href="?halaman=<?=$i-1?>">	
+		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
+				<span class="mx-1">previous</span>
+		</li>
+		</a>
+		<?php for($i=1 ; $i <= $jumlah_pagination; $i++):?>
+
+		<?php if($halaman_aktif==$i) : ?>
+		<a class="font-bold" href="?halaman=<?=$i?>">
+			<li class="mx-1 px-3 py-2 bg-green-900 text-gray-200 rounded-lg">
+			<?php echo "$i" ;?>
+			</li>
+		</a>
+		<?php else :?>
+		<a class="font-bold" href="?halaman=<?=$i?>">
+			<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
+			<?php echo "$i" ;?>
+			</li>
+		</a>
+		<?php endif; ?>
+		<?php endfor;?>
+		<a class="flex items-center font-bold" href="?halaman=<?=$i?>">	
+		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
+				<span class="mx-1">Next</span>
+		</li></a>
+		</ul>
+    	</div>
+    	<?php }?>
+		<!--End Of Pagination-->
 
 <div class="container my-4 mx-auto  md:px-10">
   <div class="flex flex-wrap -mx-1 lg:-mx-4 justify-center">
@@ -72,34 +109,44 @@ $galeri_pajangans = query("SELECT * FROM galeri_pajangan");
   </div>
 </div>
 
- <!--Pagination-->
- <div class="flex flex-col items-center my-7">
-  <ul class="flex">
-    <li class="mx-1 px-3 py-2 bg-gray-200 text-green-600 rounded-lg">
-        <a class="flex items-center font-bold" href="#">
-            <span class="mx-1">previous</span>
-        </a>
-    </li>
-    <li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-        <a class="font-bold" href="#">1</a>
-    </li>
-    <li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-        <a class="font-bold" href="#">2</a>
-    </li>
-    <li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-        <a class="font-bold" href="#">3</a>
-    </li>
-    <li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-        <a class="flex items-center font-bold" href="#">
-            <span class="mx-1">Next</span>
-        </a>
-    </li>
-  </ul>
-  </div>
+		<!--Pagination-->
+		<?php if ($total_data<=$jumlah_data){} else{?>
+		<?php $i = $halaman_aktif ;?>  
+		<div class="flex flex-col items-center my-7">
+		<ul class="flex">
+		<a class="flex items-center font-bold" href="?halaman=<?=$i-1?>">	
+		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
+				<span class="mx-1">previous</span>
+		</li>
+		</a>
+		<?php for($i=1 ; $i <= $jumlah_pagination; $i++):?>
+
+		<?php if($halaman_aktif==$i) : ?>
+		<a class="font-bold" href="?halaman=<?=$i?>">
+			<li class="mx-1 px-3 py-2 bg-green-900 text-gray-200 rounded-lg">
+			<?php echo "$i" ;?>
+			</li>
+		</a>
+		<?php else :?>
+		<a class="font-bold" href="?halaman=<?=$i?>">
+			<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
+			<?php echo "$i" ;?>
+			</li>
+		</a>
+		<?php endif; ?>
+		<?php endfor;?>
+		<a class="flex items-center font-bold" href="?halaman=<?=$i?>">	
+		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
+				<span class="mx-1">Next</span>
+		</li></a>
+		</ul>
+    	</div>
+    	<?php }?>
+		<!--End Of Pagination-->
  
 				  				<!--Footer-->
 
-
+                                  <?php include_once 'layout/footer.php';?>
 <!--Jquery-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!--SlickJS-->

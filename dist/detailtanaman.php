@@ -155,7 +155,7 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
       <h1 class="text-lg text-center text-green-800 md:text-3xl font-bold mb-2">Galeri Tanaman</h1>
     </div>
 
-    <div class="container my-4 mx-auto  md:px-10">
+    <div class="container my-4 mx-auto  md:px-10 justify-center">
       <div class="flex flex-wrap -mx-1 lg:-mx-4 justify-center">
           <?php foreach ($foto_tanamans as $foto_tanaman) { ?>
           <!-- Column -->

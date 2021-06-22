@@ -1,6 +1,10 @@
 <?php
 //Koneksi ke database//
-$conn = mysqli_connect("root@localhost", "root","","gardening");
+$host = "localhost";
+$user = "root";
+$password ="";
+$db = "gardening";
+$conn = mysqli_connect($host, $user,$password,$db);
 
 //database query all//
 $mitraq = mysqli_query($conn,"SELECT * FROM mitra");

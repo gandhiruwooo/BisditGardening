@@ -152,7 +152,19 @@ $galeri_tanamans = query("SELECT * FROM galeri_tanaman WHERE galeri_pajangan_id=
                 </div>
             </div>  
         </a> 
+        
         <?php }}?>
+        <div class="pt-16">
+            <!--tanaman lainnya-->
+            <a href="galeripajangan.php">
+                <div class="relative bg-green-800 rounded-3xl my-4 shadow-xl transition-colors duration-150 hover:bg-yellow-800">
+                    <div class="mt-5">
+                            <p class="items-center pt-4 h-16 px-2 m-2 text-lg text-gray-50 font-bold my-2"> Lihat Galeri Pajangan Lainnya</p>
+                    </div>
+                </div>
+            </a> 
+            </div>
+        </div>
 
         </div>
         </div>
@@ -184,7 +196,7 @@ $galeri_tanamans = query("SELECT * FROM galeri_tanaman WHERE galeri_pajangan_id=
     <div class="flex items-center justify-center">
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
             <?php foreach ($mitraq as $mitra) {?>
-            <a href="profilmitra.html">
+            <a href="profilmitra.php?id=<?php echo $mitra["mitra_id"]?>">
             <div class="relative bg-white rounded-3xl w-40 my-4 shadow-xl">
                 <div class="mt-8">
                     <div class="flex space-x-2">

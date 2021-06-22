@@ -129,7 +129,7 @@ $harga_alats = query("SELECT * FROM harga_alat WHERE mitra_id=$id");
                 <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
                     <div class="mt-8">
                       <div class="flex space-x-2">
-                        <img src="https://i2.wp.com/f1-styx.imgix.net/article/2019/07/25162412/pixabay-4-768x512.jpg?resize=768%2C512&ssl=1" class="w-auto" style="border-radius: 5%" />
+                        <img src="<?php echo $alat["alat_gambar"] ?>" class="w-auto" style="border-radius: 5%" />
                       </div>
                       <p class="text-xl font-semibold my-2"><a href="detailalatkebun.html"><?php echo $alat["alat_nama"]; ?></a></p>
                         <div class="flex space-x-2 text-black-400 text-sm">

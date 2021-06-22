@@ -29,7 +29,7 @@ $galeri_tanamans = query("SELECT * FROM galeri_tanaman WHERE galeri_pajangan_id=
     <h1 class="text-3xl text-center text-green-800 md:text-3xl font-bold mb-2"> Detail Galeri Pajangan </h1>
 </div>
 <div class="flex items-center justify-center px-10 ">
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 justify-center">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
         <!-- foto -->
         <div class="relative rounded-3xl my-4">
             <div class="mt-5">

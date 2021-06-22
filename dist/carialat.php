@@ -7,8 +7,37 @@ require 'layout/function.php';
 
 $id = $_GET["id"];
 
-$alats = query("SELECT * FROM alat WHERE kategori_alat_id=$id");
+$alat_all = query("SELECT * FROM alat WHERE kategori_alat_id=$id");
 $kategori_alats = query("SELECT * FROM kategori_alat WHERE kategori_alat_id=$id")[0];
+
+//pagination
+$jumlah_data = 1;
+$total_data = count($alat_all);
+$jumlah_pagination = ceil($total_data / $jumlah_data);
+
+
+echo $jumlah_data;
+echo $total_data;
+echo $jumlah_pagination;
+
+
+
+if (isset($_GET['halaman'])){
+	$halaman_aktif = $_GET['halaman'];
+  if ($halaman_aktif==0){$halaman_aktif=1;}else{}
+} else { $halaman_aktif = 1;}
+
+$i=$halaman_aktif;
+echo $halaman_aktif;
+
+$data_awal = ($halaman_aktif * $jumlah_data ) - $jumlah_data;
+echo $data_awal;
+
+$alats = query("SELECT * FROM alat WHERE kategori_alat_id=$id LIMIT $data_awal,$jumlah_data");
+
+//end pagination
+
+
 
 ?>
 <title>Cari Alat</title>
@@ -50,7 +79,40 @@ $kategori_alats = query("SELECT * FROM kategori_alat WHERE kategori_alat_id=$id"
 		<div class="flex justify-center"><button class="p-2 border w-1/4 rounded-md bg-green-900 text-white">Search</button></div>
 	</div>
 </div>
+		<!--Pagination-->
+		<?php if ($total_data<=$jumlah_data){} else{?>
+		<?php $i = $halaman_aktif ;?>  
+		<div class="flex flex-col items-center my-7">
+		<ul class="flex">
+		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i-1?>">	
+		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
+				<span class="mx-1">previous</span>
+		</li>
+		</a>
+		<?php for($i=1 ; $i <= $jumlah_pagination; $i++):?>
 
+		<?php if($halaman_aktif==$i) : ?>
+		<a class="font-bold" href="?id=<?= $id?>&halaman=<?=$i?>">
+			<li class="mx-1 px-3 py-2 bg-green-900 text-gray-200 rounded-lg">
+			<?php echo "$i" ;?>
+			</li>
+		</a>
+		<?php else :?>
+		<a class="font-bold" href="?id=<?= $id?>&halaman=<?=$i?>">
+			<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
+			<?php echo "$i" ;?>
+			</li>
+		</a>
+		<?php endif; ?>
+		<?php endfor;?>
+		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i?>">	
+		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
+				<span class="mx-1">Next</span>
+		</li></a>
+		</ul>
+    	</div>
+    <?php }?>
+		<!--End Of Pagination-->
     <!--daftar alat berkebun-->
       <h1 class=" text-center text-gray-900 text-3xl title-font font-medium mb-1 py-2 pt-10"><b>Daftar <?php echo $kategori_alats["kategori_alat_nama"]; ?></b></h1>
       <div class="flex items-center justify-center">
@@ -112,6 +174,40 @@ $kategori_alats = query("SELECT * FROM kategori_alat WHERE kategori_alat_id=$id"
         <?php } ?>
 
           </div>
-        </div>  
+        </div>
+		<!--Pagination-->
+		<?php if ($total_data<=$jumlah_data){} else{?>
+		<?php $i = $halaman_aktif ;?>  
+		<div class="flex flex-col items-center my-7">
+		<ul class="flex">
+		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i-1?>">	
+		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
+				<span class="mx-1">previous</span>
+		</li>
+		</a>
+		<?php for($i=1 ; $i <= $jumlah_pagination; $i++):?>
+
+		<?php if($halaman_aktif==$i) : ?>
+		<a class="font-bold" href="?id=<?= $id?>&halaman=<?=$i?>">
+			<li class="mx-1 px-3 py-2 bg-green-900 text-gray-200 rounded-lg">
+			<?php echo "$i" ;?>
+			</li>
+		</a>
+		<?php else :?>
+		<a class="font-bold" href="?id=<?= $id?>&halaman=<?=$i?>">
+			<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
+			<?php echo "$i" ;?>
+			</li>
+		</a>
+		<?php endif; ?>
+		<?php endfor;?>
+		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i?>">	
+		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
+				<span class="mx-1">Next</span>
+		</li></a>
+		</ul>
+    	</div>
+    <?php }?>
+		<!--End Of Pagination-->
 		<?php include_once 'layout/footer.php';?>
 </body>

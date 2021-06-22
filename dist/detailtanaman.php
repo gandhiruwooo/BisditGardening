@@ -215,14 +215,16 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
                       <i class="fas fa-tree sm:text-4xl "></i>
                     </div>
                     <p
-                      class="ml-16 text-lg items-center justify-center leading-6 font-extrabold text-gray-900 sm:text-2xl">
+                      class="text-left ml-16 text-lg items-center justify-center leading-6 font-extrabold text-gray-900 sm:text-2xl">
                       Pemupukan</p>
                   </dt>
-                  <dd class="mt-2 ml-16 text-base font-extrabold text-blue-500">
+                  <dd class="text-left mt-2 ml-16 font-extrabold text-blue-500 h-36">
                     <br>
-                    <i class="far fa-sun text-white sm:text-3xl"></i><?php echo $tanamans["jenis_pupuk_1"]; ?> : <?php echo $tanamans["frek_pemupukan_1"]; ?> <br>
+                    
+                    <?php echo $tanamans["jenis_pupuk_1"]; ?> : <?php echo $tanamans["frek_pemupukan_1"]; ?> 
                     <br>
-                    <i class="fas fa-cloud text-white sm:text-2xl"></i><?php echo $tanamans["jenis_pupuk_2"]; ?> : <?php echo $tanamans["frek_pemupukan_2"]; ?> <br>
+                    <br>
+                    <?php echo $tanamans["jenis_pupuk_2"]; ?> : <?php echo $tanamans["frek_pemupukan_2"]; ?> <br>
 
                     <!-- <br>
               Pupuk Daun : 1 kali/Minggu<br>
@@ -233,7 +235,7 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
                   </dd>
                   <dt>
 
-                    <div class="bg-green-100 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md ">
+                    <div class="bg-green-100 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
                       <h4 class="font-semibold text-lg mb-1">Kesimpulan</h4>
                       <p class="leading-tight text-justify">
                       <?php echo $tanamans["kesimpulan_pemupukan"]; ?>
@@ -248,14 +250,13 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
                       <i class="fas fa-tint sm:text-4xl"></i>
                     </div>
                     <p
-                      class="ml-16 text-lg items-center justify-center leading-6 font-extrabold text-gray-900 sm:text-2xl">
+                      class="text-left ml-16 text-lg leading-6 font-extrabold text-gray-900 sm:text-2xl">
                       Penyiraman</p>
                   </dt>
-                  <dd class="mt-2 ml-16 text-base font-extrabold text-blue-500">
-                    <br>
-                    <i class="far fa-sun text-black sm:text-3xl"></i><?php echo $tanamans["frek_penyiraman_cerah"]; ?><br>
-                    <br>
-                    <i class="fas fa-cloud-rain text-black sm:text-3xl"></i><?php echo $tanamans["frek_penyiraman_hujan"]; ?>
+                  <dd class="mt-2 ml-16 text-left font-extrabold text-blue-500 h-36">
+                  <br>
+                    <?php echo $tanamans["frek_penyiraman_cerah"]; ?>
+                    <?php echo $tanamans["frek_penyiraman_hujan"]; ?>
                   </dd>
                   <dt>
                     <div class="bg-green-100 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
@@ -290,9 +291,9 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
                         <!-- Heroicon name: outline/globe-alt -->
                         <i class="fas fa-thermometer-three-quarters sm:text-4xl"></i>
                       </div>
-                      <p class="ml-16 text-lg leading-6 font-extrabold text-gray-900 sm:text-2xl">Penempatan Tanaman</p>
+                      <p class="text-left ml-16 text-lg leading-6 font-extrabold text-gray-900 sm:text-2xl">Penempatan Tanaman</p>
                     </dt>
-                    <dd class="mt-2 ml-16 text-base font-extrabold text-blue-500">
+                    <dd class="text-left mt-2 ml-10 font-extrabold text-blue-500">
                       <i class="far fa-sun text-white sm:text-2xl"></i><?php echo $penempatans["penempatan_nama"]; ?><br>
                       <!-- <br>
                       Menghadap Matahari -->
@@ -314,10 +315,10 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
                         <i class="fas fa-mountain sm:text-4xl "></i>
                       </div>
                       <p
-                        class="ml-16 text-lg items-center justify-center leading-6 font-extrabold text-gray-900 sm:text-2xl">
+                        class="text-left ml-16 text-lg items-center justify-center leading-6 font-extrabold text-gray-900 sm:text-2xl">
                         Daerah Penanaman</p>
                     </dt>
-                    <dd class="mt-2 ml-16 text-base font-extrabold text-blue-500">
+                    <dd class="mt-2 ml-10 font-extrabold text-blue-500 text-left">
                       <i class="far fa-sun text-white sm:text-2xl"></i><?php echo $daerahs["daerah_nama"]; ?><br>
                       <!-- <br>
                   Dataran Tinggi
@@ -340,7 +341,7 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
                     <div class="mr-10">
                       <img src="/BisditGardening2021/TailwindCSS/dist/img/Plant height 1.svg" alt="" class="h-auto">
                     </div>
-                    <div class="text-center items-stretch self-center justify-center">
+                    <div class="text-left items-stretch self-center justify-center">
                       <p class="text-lg items-center justify-center font-extrabold text-gray-900 sm:text-2xl">
                         Teknik Menanam</p>
                       <p class="text-white font-extrabold text-blue-500"><?php echo $tanamans["teknik_menanam"]; ?></p>

@@ -25,26 +25,38 @@ $harga_alats = query("SELECT * FROM harga_alat WHERE mitra_id=$id");
   <!--Isi-->
   <div class="container mx-auto my-5 p-5">
     <div class="md:flex no-wrap md:-mx-2 ">
-        <!-- Left Side -->
-        <div class="w-2/12 px-2">
-        <div class="bg-white rounded-3xl my-4 shadow-xl ">
-                <div class="image overflow-hidden py-5 px-5">
-                    <img class="h-auto w-full mx-auto"
-                        src="img\<?php echo $mitra["mitra_foto"]; ?>.jpg"
-                        alt="">
-                </div>
-                <h1 class="text-gray-900 font-bold text-xl text-center leading-8 my-1 "><a href="profilmitra.html"><?php echo $mitra["mitra_nama"]; ?></a></h1>
-                <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Contact Us:</h1>
-                <h1 class="text-sm text-gray-500 px-2 py-1"><?php echo $mitra["mitra_cp"]; ?> : <?php echo $mitra["mitra_notelp"]; ?></h1>
-                <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Kota</h1>
-                <h1 class="text-sm text-gray-500 px-2 py-1"><?php echo $mitra["mitra_kota"]; ?> </h1>
-                <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Provinsi</h1>
-                <h1 class="text-sm text-gray-500 px-2 py-1"><?php echo $mitra["mitra_provinsi"]; ?></h1>
-                <div class="my-4"></div>
-                <a class="text-center block w-full text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4" href="<?= $mitra["mitra_igurl"];?>">Info selengkapnya</a>
-            </div>
+      <!-- Left Side -->
+      <div class="w-2/12 px-2 ">
+        <div class="bg-white rounded-3xl my-4 shadow-lg">
+          <div class="image overflow-hidden py-3 px-3">
+            <img class="h-auto w-full mx-auto" src="img\tamanku.jpg" alt="">
+          </div>
+          <div class="text-left px-2 mb-5">
+            <h1 class="text-gray-900 font-bold text-xl text-center leading-8 my-1 "><a href="profilmitra.html">Tamanku
+                Surabaya</a></h1>
+            <p class="text-sm text-gray-500 hover:text-gray-600 leading-6 px-2 py-1">Lorem ipsum dolor sit amet
+              consectetur adipisicing elit.
+              Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt</p>
+          </div>
+          <div class="text-left px-2 mb-5">
+            <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Contact Us:</h1>
+            <p class="text-sm text-gray-500 px-2 py-1">081236677499 (Dania)</p>
+            <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Alamat</h1>
+            <h1 class="text-sm text-gray-500 px-2 py-1">Jl. Situgembolo, Surabaya, Jawa Timur (50257)</h1>
+            <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Instagram</h1>
+            <h1 class="text-sm text-gray-500 px-2 py-1">@tanamansby</h1>
+            <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Toko Online</h1>
+            <h1 href="" class="text-sm text-gray-500 px-2 py-1 break-all"><a href="">tokopedia.com/tamankusurabaya </a>
+            </h1>
+          </div>
+          <div class="py-4 px-4">
+            <iframe class="w-full shadow-lg"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.6345489893847!2d112.79273661477497!3d-7.282355994743738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1624001123330!5m2!1sen!2sid"
+              loading="lazy"></iframe>
+          </div>
+        </div>
       </div>
-          <!-- End of profile card -->
+      <!-- End of profile card -->
         <!-- Right Side -->
         <div class="w-full md:w-9/12 mx-2">
             <!-- Profile tab -->

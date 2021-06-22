@@ -1,0 +1,3 @@
+Cara Install Database gardening.sql
+
+Buat dulu database gardening di phpmyadmin, lalu lakukan import dengan file gardening(3).sql yang sudah disediakan

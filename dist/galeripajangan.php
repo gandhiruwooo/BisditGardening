@@ -19,7 +19,7 @@ $galeri_pajangans = query("SELECT * FROM galeri_pajangan");
 <!-- galeri pajangan -->
 <div class="pt-16"> 
   <div class="grid grid-cols-1 gap-6 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
-    <a href="home.html">
+    <a href="home.php">
       <button class="bg-green-800 hover:bg-yellow-800 text-white font-bold py-2 px-4 mx-32 mb-10 rounded-full"> Kembali 
       </button>
     </a>
@@ -60,9 +60,9 @@ $galeri_pajangans = query("SELECT * FROM galeri_pajangan");
           <!-- Article -->
           <article class="overflow-hidden rounded-lg shadow-lg">
               <a href="galeripajangan-detailtanaman.php?id=<?php echo $galeri_pajangan["galeri_pajangan_id"]?>">
-                  <img alt="Placeholder" class="block h-auto w-full" src="<?php echo $galeri_pajangan["galeri_foto_url"] ?>">
-              <header class="flex bg-green-800 items-center justify-between leading-tight p-2 md:p-4">
-                  <h1 class="text-xl text-white text-center font-bold"><?php echo $galeri_pajangan["galeri_foto_judul"] ?></h1>
+                  <img class="object-fill h-64 w-full" src="<?php echo $galeri_pajangan["galeri_foto_url"] ?>">
+              <header class="flex h-16 bg-green-800 items-center justify-center leading-tight p-2 md:p-4">
+                  <h1 class="text-l text-white text-center font-bold"><?php echo $galeri_pajangan["galeri_foto_judul"] ?></h1>
                 </header>
               </a>
           </article>

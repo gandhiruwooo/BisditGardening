@@ -22,7 +22,7 @@ $galeri_tanamans = query("SELECT * FROM galeri_tanaman WHERE galeri_pajangan_id=
 <!-- galeri pajangan -->
 <div class="pt-16 pb-20"> 
   <div class="grid grid-cols-1 gap-6 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
-    <a href="galeripajangan.html">
+    <a href="galeripajangan.php">
       <button class="bg-green-800 hover:bg-yellow-800 text-white font-bold py-2 px-4 mx-32 mb-10 rounded-full"> Kembali 
       </button>
     </a>
@@ -34,7 +34,7 @@ $galeri_tanamans = query("SELECT * FROM galeri_tanaman WHERE galeri_pajangan_id=
         <div class="relative rounded-3xl my-4">
             <div class="mt-5">
                 <div class="flex">
-                    <img src="<?php echo $galeri_pajangan["galeri_foto_url"]?>" class= "w-auto" style="border-radius: 5%">
+                    <img src="<?php echo $galeri_pajangan["galeri_foto_url"]?>" class= "object-fill h-96 w-96" style="border-radius: 5%">
                 </div>
             </div>
         </div>  

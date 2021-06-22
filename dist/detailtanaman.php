@@ -128,7 +128,11 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
               </span>
             </div>
               <h1 class="text-black-100 text-2xl text-left font-bold"><?php echo $tanamans["tanaman_nama"]; ?></h1>
-              <p class=" text-gray-600 text-2xl text-left"> Rp. 100.000,00 - RP. 150.000,00 </p>
+              
+              <?php if (empty($harga_tanamans)){} else { 
+              $harga_tanaman_rerata = query("SELECT AVG(harga) FROM harga_tanaman WHERE tanaman_id=$id")[0];?>
+              <p class=" text-gray-600 text-2xl text-left">Rp.<?php echo $harga_tanaman_rerata["AVG(harga)"]; ?> </p>
+              <?php }?>
               <div class='px-5 py-3'>
                 <h3 class="font-bold text-xs text-center">FUNGSI TANAMAN</h3>
                 <!-- This is the tags container -->
@@ -152,7 +156,7 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
     </div>
 
     <div class="container my-4 mx-auto  md:px-10">
-      <div class="flex flex-wrap -mx-1 lg:-mx-4">
+      <div class="flex flex-wrap -mx-1 lg:-mx-4 justify-center">
           <?php foreach ($foto_tanamans as $foto_tanaman) { ?>
           <!-- Column -->
           <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
@@ -634,7 +638,8 @@ if (empty($khasiats)){} else{?>
 
 
     <!-- Link ke mitra -->
-    <?php if (empty($harga_tanamans)){}else {?>
+    <?php if (empty($harga_tanamans)){}else {
+      ?>
     <div class="p-5">
       <div class="pt-12 pb-20">
         <div class="text-center mb-1 p-3">
@@ -643,8 +648,9 @@ if (empty($khasiats)){} else{?>
         <div class="flex justify-center">
           <!-- <div class="grid grid-cols-2"> -->
                 <?php foreach ($harga_tanamans as $harga_tanaman) {
-                  $mitra_id = $harga_tanaman[0]["mitra_id"];
-                  $mitra = query("SELECT * FROM mitra WHERE mitra_id=$mitra_id");
+                  
+                  $mitra_id = $harga_tanaman["mitra_id"];
+                  $mitra = query("SELECT * FROM mitra WHERE mitra_id=$mitra_id")[0];
                 ?>
         <div class="w-3/12 px-6">
             <div class="bg-white rounded-3xl my-4 shadow-xl ">

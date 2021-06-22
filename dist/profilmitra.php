@@ -11,6 +11,7 @@ $mitra = query("SELECT * FROM mitra WHERE mitra_id=$id")[0];
 
 $harga_tanamans = query("SELECT * FROM harga_tanaman WHERE mitra_id=$id");
 $harga_alats = query("SELECT * FROM harga_alat WHERE mitra_id=$id");
+var_dump($mitra)
 ?>
 
 
@@ -39,16 +40,26 @@ $harga_alats = query("SELECT * FROM harga_alat WHERE mitra_id=$id");
                 <h1 class="text-sm text-gray-500 px-2 py-1"><?php echo $mitra["mitra_kota"]; ?> </h1>
                 <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Provinsi</h1>
                 <h1 class="text-sm text-gray-500 px-2 py-1"><?php echo $mitra["mitra_provinsi"]; ?></h1>
+                <?php if (empty($mitra["mitra_ig"]=="-")){} else { ?>
                 <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Instagram</h1>
+
+                <a href="<?php echo $mitra["mitra_igurl"]; ?>">
+                <h1 class="text-sm text-blue-500 px-2 py-1"><?php echo $mitra["mitra_ig"]; ?></h1>
+                </a>
+                <?php }?>
+                <?php if (empty($mitra["mitra_ecom"]=="-")){} else { ?>
                 <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Toko Online</h1>
+                <a href="<?php echo $mitra["mitra_ecom"]; ?>">
+                <h1 class="text-sm text-blue-500 px-2 py-1"><?php echo $mitra["mitra_ecomurl"]; ?></h1>
+                </a>
+                <?php }?>
                 <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Maps</h1>
                 <div class="py-4 px-4">
                 <iframe class="w-full shadow-lg"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.6345489893847!2d112.79273661477497!3d-7.282355994743738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1624001123330!5m2!1sen!2sid"
+                src="<?php echo $mitra["lokasi_url"]; ?>"
                 loading="lazy"></iframe>
                </div>
                 <div class="my-4"></div>
-                <a class="text-center block w-full text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4" href="<?= $mitra["mitra_igurl"];?>">Info selengkapnya</a>
             </div>
             
       </div>

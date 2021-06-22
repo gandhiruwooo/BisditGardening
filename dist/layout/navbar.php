@@ -31,9 +31,4 @@
         </div>
           <a href="listmitra.php">Mitra</a>
           <!--Search bar-->
-          <div class="search-container">
-            <form action="/action_page.php">
-              <input type="text" placeholder="Cari" name="search">
-            </form>
-          </div>
       </div> 

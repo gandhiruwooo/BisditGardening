@@ -55,7 +55,7 @@ $galeri_tanamans = query("SELECT * FROM galeri_tanaman WHERE tanaman_id=$id");
   </div>
 
 <div class="container my-4 mx-auto  md:px-10">
-  <div class="flex flex-wrap -mx-1 lg:-mx-4">
+  <div class="flex flex-wrap -mx-1 lg:-mx-4 justify-center">
       <!-- Column -->
       <?php foreach ($galeri_tanamans as $galeri_tanaman){ 
         $galeri_pajangan_id = $galeri_tanaman["galeri_pajangan_id"];

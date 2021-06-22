@@ -157,7 +157,7 @@ $galeri_tanamans = query("SELECT * FROM galeri_tanaman WHERE galeri_pajangan_id=
         <div class="pt-16">
             <!--tanaman lainnya-->
             <a href="galeripajangan.php">
-                <div class="relative bg-green-800 rounded-3xl my-4 shadow-xl transition-colors duration-150 hover:bg-yellow-800">
+                <div class="relative bg-black rounded-3xl my-4 shadow-xl transition-colors duration-150 hover:bg-green-800">
                     <div class="mt-5">
                             <p class="items-center pt-4 h-16 px-2 m-2 text-lg text-gray-50 font-bold my-2"> Lihat Galeri Pajangan Lainnya</p>
                     </div>

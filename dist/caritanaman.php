@@ -38,13 +38,6 @@ $kategori_tanamans = query("SELECT * FROM kategori_tanaman WHERE kategori_tanama
         </div>
         <div class="pt-6 md:pt-0 md:pl-6">
           <select class="border p-2 rounded">
-            <option>&#60; Rp 50.000,00</option>
-            <option>Rp 50.000,00 - Rp 150.000,00</option>
-            <option>&#62; Rp 150.000,00</option>
-          </select>
-        </div>
-        <div class="pt-6 md:pt-0 md:pl-6">
-          <select class="border p-2 rounded">
             <option>Ruang Sempit</option>
             <option>Pekarangan</option>
             <option>Kesehatan</option>

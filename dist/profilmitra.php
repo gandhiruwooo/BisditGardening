@@ -42,15 +42,15 @@ $harga_alats = query("SELECT * FROM harga_alat WHERE mitra_id=$id");
                 <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Instagram</h1>
                 <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Toko Online</h1>
                 <h1 class="text-sm text-gray-500 font-bold px-2 py-1">Maps</h1>
-                
+                <div class="py-4 px-4">
+                <iframe class="w-full shadow-lg"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.6345489893847!2d112.79273661477497!3d-7.282355994743738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1624001123330!5m2!1sen!2sid"
+                loading="lazy"></iframe>
+               </div>
                 <div class="my-4"></div>
                 <a class="text-center block w-full text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4" href="<?= $mitra["mitra_igurl"];?>">Info selengkapnya</a>
             </div>
-            <div class="py-4 px-4">
-            <iframe class="w-full shadow-lg"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.6345489893847!2d112.79273661477497!3d-7.282355994743738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1624001123330!5m2!1sen!2sid"
-              loading="lazy"></iframe>
-          </div>
+            
       </div>
           <!-- End of profile card -->
         <!-- Right Side -->

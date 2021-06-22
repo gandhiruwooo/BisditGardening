@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Titan</title>
+    <style>
+        /*each image is referenced twice in the HTML, but each image only needs to be updated in the CSS*/
+        .image1 {
+          content: url("https://randomwordgenerator.com/img/picture-generator/52e4d7434f51a914f1dc8460962e33791c3ad6e04e5074417d2c7ed09f4acc_640.jpg")
+        }
+      
+        .image2 {
+          content: url("https://randomwordgenerator.com/img/picture-generator/55e8d146425bb10ff3d8992cc12c30771037dbf852547848702a7fd19545_640.jpg")
+        }
+      
+        .image3 {
+          content: url("https://randomwordgenerator.com/img/picture-generator/55e8d24b4257ac14f1dc8460962e33791c3ad6e04e507440752972d3924cc6_640.jpg")
+        }
+      
+        .image4 {
+          content: url("https://randomwordgenerator.com/img/picture-generator/55e0d44b4b56a414f1dc8460962e33791c3ad6e04e5074417c2d78d2954bcd_640.jpg")
+        }
+      
+        .image5 {
+          content: url("https://randomwordgenerator.com/img/picture-generator/5ee3dc414954b10ff3d8992cc12c30771037dbf85254794e732f7ad7934e_640.jpg")
+        }
+          </style>
+      <script src="https://kit.fontawesome.com/64de849d60.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="grid grid-cols-12 gap-2">
+        <div class="col-start-1 col-end-2 md:flex justify-center py-16">
+          <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-black">
+            <a href="https://www.twitter.com">
+            <em class="fas fa-share-alt sm:text-2xl">&nbsp;</em>
+            </a>
+          </div>
+        </div>
+
+        <!-- PUNYA TITAN -->  
+        <div class="col-start-3 col-end-5 md:flex justify-center py-16">  
+            <section class="mx-auto max-w-2xl">
+                <div class="shadow-2xl relative">
+                  <!-- large image on slides -->
+                  <div class="mySlides hidden">
+                    <div class="image1 w-full object-cover"></div>
+                  </div>
+                  <div class="mySlides hidden">
+                    <div class="image2 w-full object-cover"></div>
+                  </div>
+                  <div class="mySlides hidden">
+                    <div class="image3 w-full object-cover"></div>
+                  </div>
+                  <div class="mySlides hidden">
+                    <div class="image4 w-full object-cover"></div>
+                  </div>
+                  <div class="mySlides hidden">
+                    <div class="image5 w-full object-cover"></div>
+                  </div>
+            
+                  <!-- butttons -->
+                  <a class="absolute left-0 inset-y-0 flex items-center -mt-50 px-4 text-white hover:text-gray-800 cursor-pointer text-3xl font-extrabold" onclick="plusSlides(-1)">❮</a>
+                  <a class="absolute right-0 inset-y-0 flex items-center -mt-50 px-4 text-white hover:text-gray-800 cursor-pointer text-3xl font-extrabold" onclick="plusSlides(1)">❯</a>
+            
+                  <!-- image description -->
+                  <div class="text-center text-white font-light tracking-wider bg-gray-800 py-2">
+                    <p id="caption"></p>
+                  </div>      
+                </div>
+              </section>
+            
+              <script>
+                //JS to switch slides and replace text in bar//
+                var slideIndex = 1;
+                showSlides(slideIndex);
+            
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+            
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+            
+                function showSlides(n) {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("description");
+                  var captionText = document.getElementById("caption");
+                  if (n > slides.length) {
+                    slideIndex = 1
+                  }
+                  if (n < 1) {
+                    slideIndex = slides.length
+                  }
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" opacity-100", "");
+                  }
+                  slides[slideIndex - 1].style.display = "block";
+                  dots[slideIndex - 1].className += " opacity-100";
+                  captionText.innerHTML = dots[slideIndex - 1].alt;
+                }
+              </script>
+        </div>  
+        <div class="col-start-6 col-end-10">    
+            <header>
+                <div class="md:flex justify-center py-16 ">
+                    <div class="p-8  my-auto ">
+                        <h1 class="text-orange-100 text-xl text-center font-bold"> Philodendron Lynette Philo Linet </h1>
+                        <p class=" text-gray-600 text-xl text-center"> Rp. 100.000,00 - RP. 150.000,00 </p>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+    <!-- PUNYA TITAN -->
+
+    <!-- PUNYA GIBE -->
+    <div class="py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-left">
+          <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            Perawatan
+          </p>
+        </div>
+        <div class="mt-10">
+          <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 ">
+            <div class="relative">
+              <dt>
+                  <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-black">
+                  <i class="fas fa-tree sm:text-4xl "></i>
+                </div>
+                <p class="ml-16 text-lg items-center justify-center leading-6 font-extrabold text-gray-900 sm:text-2xl"> Pemupukan</p>
+              </dt>
+              <dd class="mt-2 ml-16 text-base font-extrabold text-blue-500">
+               <br>
+              Pupuk Daun : 1 kali/Minggu<br>
+                <br>
+                Pupuk Akar : 1 Kali/3 Bulan
+              </dd>
+            </div>
+    
+            <div class="relative">
+              <dt>
+                <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-black">
+                  <i class="fas fa-tint sm:text-4xl" ></i>
+                </div>
+                <p class="ml-16 text-lg items-center justify-center leading-6 font-extrabold text-gray-900 sm:text-2xl"> Penyiraman</p>
+              </dt>
+              <dd class="mt-2 ml-16 text-base font-extrabold text-blue-500">
+                  <br>
+                  <i class="far fa-sun text-black sm:text-3xl"></i>&nbsp &nbsp 4 kali/Minggu<br>
+                  <br>
+                  <i class="fas fa-cloud text-black sm:text-2xl"></i>&nbsp &nbsp 3 kali/Minggu<br>
+                  <br>
+                  <i class="fas fa-cloud-rain text-black sm:text-3xl"></i>&nbsp &nbsp 2 Kali/Minggu
+              </dd>
+            </div>
+    
+            <div class="relative">
+              <dt>
+                  <div class="bg-green-100 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
+                      <h4 class="font-semibold text-lg mb-1">Kesimpulan</h4>
+                      <p class="leading-tight text-justify">
+                      Selain penyiraman tanaman dengan air, tanaman juga perlu diberi pupuk secara rutin untuk dapat meningkatkan kualitas pertumbuhannya. 
+                      </p>
+                  </div>
+              </dd>
+            </div>
+    
+            <div class="relative">
+              <dt>
+                  <div class="bg-green-100 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
+                      <h3 class="font-semibold text-lg mb-1">Kesimpulan</h3>
+                      <p class="leading-tight text-justify">
+                      Tanaman perlu mendapatkan air yang cukup.. Penyiraman dilakukan seperlunya sesuai dengan kondisi cuaca dan curah hujan.
+                      </p>
+                  </div>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  
+    
+  <!--Frekuensi Penanaman End-->
+  <div class="py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- <div class="mt-10"> -->
+          <dl class="md:grid md:grid-cols-2 md:gap-x-8">
+            <div class="relative">
+              <dt>
+                  <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-black">
+                  <!-- Heroicon name: outline/globe-alt -->
+                  <i class="fas fa-thermometer-three-quarters sm:text-4xl"></i>
+                </div>
+                <p class="ml-16 text-lg leading-6 font-extrabold text-gray-900 sm:text-2xl">Penempatan Tanaman</p>
+              </dt>
+              <dd class="mt-2 ml-16 text-base font-extrabold text-blue-500">
+                <br>
+                  Menghadap Matahari
+              </dd>
+            </div>
+            <div class="relative">
+              <dt>
+                <div>
+                </div>
+                <p class="ml-16 text-lg leading-6 font-extrabold text-gray-900"></p>
+              </dt>
+              <dd class="mt-2 ml-16 text-base text--500"></dd>
+            </div>
+
+            <div class="relative">
+              <dt>
+                  <div class="bg-green-100 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
+                      <h3 class="font-semibold text-lg mb-1">Kesimpulan</h3>
+                      <p class="leading-tight text-justify">
+                        Tanaman memerlukan intensitas matahari
+                        yang tinggi. Letakkan tanaman di luar rumah
+                        untuk mendapatkan sinar matahari yang cukup 
+                    </p>
+                </div>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>

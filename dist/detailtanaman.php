@@ -158,8 +158,8 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
           <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
             <!-- Article -->
             <article class="overflow-hidden rounded-lg shadow-lg border-2 border-black">
-                    <img alt="Placeholder" class="block h-80 w-full" src="<?php echo $foto_tanaman["foto_url"]; ?>">
-                <header class="flex bg-green-800 items-center justify-between leading-tight p-2 md:p-4">
+                    <img class="object-fill h-60 w-full" src="<?php echo $foto_tanaman["foto_url"]; ?>">
+                <header class="flex h-16 bg-green-800 items-center justify-between leading-tight p-2 md:p-4">
                     <h1 class="text-xl text-white text-center font-bold"><?php echo $foto_tanaman["foto_desc"]; ?></h1>
                   </header>
             </article>

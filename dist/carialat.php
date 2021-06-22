@@ -61,7 +61,7 @@ $kategori_alats = query("SELECT * FROM kategori_alat WHERE kategori_alat_id=$id"
 			<a href="detailalatkebun.php?id=<?= $alat["alat_id"];?>">
 				<div class="mt-8">
 					<div class="flex space-x-2">
-						<img src="<?php echo $alat["alat_gambar"]; ?>" class="w-auto" style="border-radius: 5%" />
+						<img src="<?php echo $alat["alat_gambar"]; ?>" class="object-contain md:object-cover h-60 w-full" style="border-radius: 5%" />
 					</div>
 						<p class="text-xl font-semibold my-2"><a href="detailalatkebun.php?id=<?= $alat["alat_id"];?>"><?php echo $alat["alat_nama"]; ?></a></p>
 						<div class="flex space-x-2 text-black-400 text-sm">

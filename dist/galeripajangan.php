@@ -60,7 +60,7 @@ $galeri_pajangans = query("SELECT * FROM galeri_pajangan");
           <!-- Article -->
           <article class="overflow-hidden rounded-lg shadow-lg">
               <a href="galeripajangan-detailtanaman.php?id=<?php echo $galeri_pajangan["galeri_pajangan_id"]?>">
-                  <img class="object-fill h-64 w-full" src="<?php echo $galeri_pajangan["galeri_foto_url"] ?>">
+                  <img class="object-fill h-60 w-full" src="<?php echo $galeri_pajangan["galeri_foto_url"] ?>">
               <header class="flex h-16 bg-green-800 items-center justify-center leading-tight p-2 md:p-4">
                   <h1 class="text-l text-white text-center font-bold"><?php echo $galeri_pajangan["galeri_foto_judul"] ?></h1>
                 </header>

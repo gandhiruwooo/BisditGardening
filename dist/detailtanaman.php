@@ -105,7 +105,7 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
 
       <!-- PUNYA TITAN -->
       <div class="md:col-start-4 col-end-6 flex justify-center py-16">
-          <div class="object-contain h-60 w-60 image1 rounded-lg border-2 border-black">
+          <div class="object-contain h-60 w-60 image1 rounded-lg border-green-600 border-opacity-50 border-2 border-solid">
           </div>
       </div>
 
@@ -161,7 +161,7 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
           <!-- Column -->
           <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
             <!-- Article -->
-            <article class="overflow-hidden rounded-lg shadow-lg border-2 border-black">
+            <article class="overflow-hidden rounded-lg shadow-lg border-green-600 border-opacity-50 border-2 border-solid">
                     <img class="object-fill h-60 w-full" src="<?php echo $foto_tanaman["foto_url"]; ?>">
                 <header class="flex h-16 bg-green-800 items-center justify-between leading-tight p-2 md:p-4">
                     <h1 class="text-xl text-white text-center font-bold"><?php echo $foto_tanaman["foto_desc"]; ?></h1>
@@ -585,7 +585,7 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
             <div class="mb-3">
               <div class="pb-6 md:pb-0 flex flex-col">
                 <div><label
-                    class="bg-white input-field inline-flex items-baseline border-none shadow-md bg-white p-4 rounded"><span
+                    class="bg-white input-field inline-flex items-baseline border-none shadow-md bg-white p-4 rounded "><span
                       class="flex-none text-dusty-blue-darker select-none leading-none"><?php echo $kelebihan["kelebihan"]; ?></span></label>
                 </div>
               </div>

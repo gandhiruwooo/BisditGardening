@@ -1,6 +1,6 @@
 <?php
 //Koneksi ke database//
-$host = "127.0.0.1";
+$host = "localhost:3333";
 $user = "root";
 $password ="";
 $db = "gardening";

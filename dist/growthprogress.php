@@ -45,7 +45,7 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 				$fase_growth = query("SELECT * FROM fase_growth WHERE fase_growth_id=$fase_growth_id")[0];
 				?>
 			<a href="growthprogress.php?id=<?= $id?>&fase=<?= $fase_growth_id?>&tanamanid=<?=$tanamanid?>"
-				class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium 
+				class="text-lg sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium 
 				<?php
               	if ($fase_pertanaman["fase_pertanaman_id"]==$fase_pertanaman_utama["fase_pertanaman_id"]){
                 echo "bg-gray-100 ";
@@ -118,15 +118,15 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 					
 				  <?php foreach ($fase_pertanaman_masalahs as $fase_pertanaman_masalah){?>
 					<details class="grid mb-4 px-4">
-						<summary class="font-semibold bg-gray-200 rounded-md py-2 px-4"><?php echo $fase_pertanaman_masalah["masalah"]; ?>
+						<summary class="text-xl font-semibold bg-gray-200 rounded-md py-2 px-4"><?php echo $fase_pertanaman_masalah["masalah"]; ?>
 						</summary>
 						<span class="px-4 py-2">
 							<ul>
-								<li> <p class=font-bold> Penyebab : </p> 
-									<p><?php echo $fase_pertanaman_masalah["penyebab"]; ?></p>
+								<li> <p class="text-xl font-bold"> Penyebab : </p> 
+									<p class="text-xl"><?php echo $fase_pertanaman_masalah["penyebab"]; ?></p>
 								</li>
-								<li> <p class=font-bold> Solusi: </p> 
-									<p><?php echo $fase_pertanaman_masalah["solusi"]; ?></p>
+								<li> <p class="text-xl font-bold"> Solusi: </p> 
+									<p class="text-xl"><?php echo $fase_pertanaman_masalah["solusi"]; ?></p>
 								</li>
 							</ul>
 						</span>
@@ -148,10 +148,10 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 			<div class="grid grid-cols-2 lg:w-4/5 sm:mx-auto sm:mb-2 mx-4 px-4">
 					<?php foreach ($fase_pertanaman_qnas as $fase_pertanaman_qna) {?>
 					<details class="grid mb-4 px-4">
-						<summary class="font-semibold bg-gray-200 rounded-md py-2 px-4"><?php echo $fase_pertanaman_qna["pertanyaan"]; ?>
+						<summary class="text-xl font-semibold bg-gray-200 rounded-md py-2 px-4"><?php echo $fase_pertanaman_qna["pertanyaan"]; ?>
 						</summary>
 						<span class="px-4 py-2">
-									<p><?php echo $fase_pertanaman_qna["jawaban"]; ?></p>
+									<p class="text-xl"><?php echo $fase_pertanaman_qna["jawaban"]; ?></p>
 						</span>
 					</details>
 					<?php } ?>

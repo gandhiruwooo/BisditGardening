@@ -193,13 +193,13 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
     <!-- NavTab -->
     <div class="tab-header my-20 mx-auto flex text-center justify-center">
       <a
-        class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 cursor-pointer hover-tab active-tab text-green-800 hover:text-yellow-800 transition-colors duration-150 md:text-2xl">
+        class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 cursor-pointer hover-tab active-tab text-green-500 hover:bg-gray-100 transition-colors duration-150 md:text-lg border-green-500 tracking-wider rounded-t">
         Perawatan </a>
       <a
-        class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 cursor-pointer hover-tab text-green-800 hover:text-yellow-800 transition-colors duration-150 md:text-2xl">
+        class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none cursor-pointer hover-tab text-green-500 hover:bg-gray-100 transition-colors duration-150 md:text-lg border-green-500 tracking-wider rounded-t">
         Penanaman </a>
       <a
-        class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 cursor-pointer hover-tab text-green-800 hover:text-yellow-800 transition-colors duration-150 md:text-2xl">
+        class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 cursor-pointer hover-tab text-green-500 hover:bg-gray-100 transition-colors duration-150 md:text-lg border-green-500 tracking-wider rounded-t">
         Pertumbuhan </a>
     </div>
     <!-- End Navtab -->
@@ -584,9 +584,12 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
             <?php foreach ($kelebihans as $kelebihan) { ?>
             <div class="mb-3">
               <div class="pb-6 md:pb-0 flex flex-col">
-                <div><label
-                    class="bg-white input-field inline-flex items-baseline border-none shadow-md bg-white p-4 rounded "><span
-                      class="flex-none text-dusty-blue-darker select-none leading-none"><?php echo $kelebihan["kelebihan"]; ?></span></label>
+                <div>
+                    <label class="bg-white input-field inline-flex items-baseline border-none shadow-md bg-white p-4 rounded">
+                    <span class="flex-none text-dusty-blue-darker select-none leading-none">
+                      <?php echo $kelebihan["kelebihan"]; ?>
+                    </span>
+                    </label>
                 </div>
               </div>
             </div>

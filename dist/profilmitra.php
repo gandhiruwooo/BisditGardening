@@ -85,7 +85,7 @@ var_dump($mitra)
                     <div class="mt-8">
                         <div class="flex space-x-2">
                             <img src="<?php echo $foto_tanamans["foto_url"]; ?>" 
-                            class="w-auto" style="border-radius: 5%"/>
+                            class="object-contain md:object-cover h-60 w-full"style="border-radius: 5%"/>
                         </div>
                         <p class="text-xl font-semibold my-2"><?php echo $tanaman["tanaman_nama"]; ?></p>
                         <div class="flex space-x-2 text-black-400 text-sm">
@@ -148,7 +148,7 @@ var_dump($mitra)
                 <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
                     <div class="mt-8">
                       <div class="flex space-x-2">
-                        <img src="<?php echo $alat["alat_gambar"] ?>" class="w-auto" style="border-radius: 5%" />
+                        <img src="<?php echo $alat["alat_gambar"] ?>" class="object-contain md:object-cover h-60 w-full" style="border-radius: 5%" />
                       </div>
                       <p class="text-xl font-semibold my-2"><a href="detailalatkebun.html"><?php echo $alat["alat_nama"]; ?></a></p>
                         <div class="flex space-x-2 text-black-400 text-sm">

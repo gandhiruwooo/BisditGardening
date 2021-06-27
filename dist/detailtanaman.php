@@ -206,10 +206,10 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
     <!-- content Start -->
     <div class="konten">
       <div class="perawatan content content-active">
+      <h1 class="text-3xl text-center text-green-800 md:text-3xl font-bold mb-2">Perawatan</h1>
         <div class="py-12 bg-white">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
-              <h1 class="text-3xl text-center text-green-800 md:text-3xl font-bold mb-2">Perawatan</h1>
             </div>
             <div class="mt-10">
               <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 ">
@@ -280,10 +280,10 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
       <!-- EndPerawatan -->
       <!--Frekuensi Penanaman End-->
       <div class="penanaman content">
+      <h1 class="text-3xl text-center text-green-800 md:text-3xl font-bold mb-2">Penanaman</h1>
         <div class="py-12 bg-white">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
-              <h1 class="text-3xl text-center text-green-800 md:text-3xl font-bold mb-2">Penanaman</h1>
             </div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div class="mt-10">
@@ -361,19 +361,20 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
       <!-- PUNYA GIBE -->
       <!-- Pertumbuhan Tanaman -->
       <div class="pertumbuhan content">
+      <h1 class="text-3xl text-center text-green-800 md:text-3xl font-bold mb-2">Usia Pertumbuhan Tanaman</h1>
         <div class="shadow-lg pb-5 px-5 rounded-lg">
           <div class="mx-auto text-center">
             <div class="text-center mb-10">
-              <h1 class="text-3xl text-center text-green-800 md:text-3xl font-bold mb-2">Usia Pertumbuhan Tanaman</h1>
+              <!-- <h1 class="text-3xl text-center text-green-800 md:text-3xl font-bold mb-2">Usia Pertumbuhan Tanaman</h1> -->
             </div>
           </div>
           <div class="mx-auto flex justify-between">
             <?php foreach ($usias as $usia){?>
             <div class="card w-4/5 mr-2">
-              <img src="<?php echo $usia["foto_url"]; ?>" class="" alt="">
+              <img src="<?php echo $usia["foto_url"]; ?>" class="object-contain md:object-cover h-60 w-full rounded-lg shadow-lg border-2 border-black" alt="">
               <div class="caption">
                 <h1 class="text-xl font-bold"><?php echo $usia["usia_jenis"]; ?></h1>
-                <h5 class="font-medium text-blue-700"><?php echo $usia["usia_angka"]; ?></h5>
+                <h1 class="text-xl text-center text-blue-400 font-bold "><?php echo $usia["usia_angka"]; ?></h1>
               </div>
             </div>
             <?php }?>

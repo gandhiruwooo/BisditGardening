@@ -58,7 +58,7 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 
 		<div class="flex flex-col text-center w-full pb-2">
 			<h1 class="text-3xl font-bold title-font mb-4 text-green-800 text-center"><?php echo $fase_growth_utama["fase_growth_nama"]; ?></h1>
-			<p class="lg:w-2/3 mx-auto leading-relaxed text-base"><?php echo $fase_growth_utama["fase_growth_desc"]; ?></p>
+			<p class="lg:w-2/3 mx-auto leading-relaxed text-xl"><?php echo $fase_growth_utama["fase_growth_desc"]; ?></p>
 		</div>
 
 		<div class="pt-10">
@@ -71,13 +71,13 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 							
 							<?php foreach ($aktivitas_growths as $aktivitas_growth) { ?>
 							<div class="mb-4">
-							<div class="flex items-center justify-between bg-green-900 pl-3 pr-2 py-3 w-full rounded text-white font-bold">
+							<div class="flex items-center justify-between bg-green-900 pl-3 pr-2 py-3 w-full rounded text-white font-bold text-lg">
 								<?php echo $aktivitas_growth["aktivitas_urutan"]; ?>. <?php echo $aktivitas_growth["aktivitas_nama"]; ?>
 								<span class="h-6 w-6 flex items-center justify-center text-teal-500"> </span>
 							</div>
 							<div class="p-3">
 								<img class="xl:w-1/4 lg:w-1/3 md:w-1/2 w-2/3 block mx-auto my-5 object-cover object-center rounded" alt="hero" src="<?php echo $aktivitas_growth["aktivitas_foto_url"]; ?>" />
-								<p class="text-gray-600 mb-3"><?php echo $aktivitas_growth["aktivitas_desc"]; ?></p>
+								<p class="text-gray-600 text-xl mb-3"><?php echo $aktivitas_growth["aktivitas_desc"]; ?></p>
 							
 
 							
@@ -102,7 +102,7 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 						</div>
 					</div>
 			</div>
-			<p class="text-base text-center leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto"><?php echo $fase_pertanaman_utama["kesulitan_desc"]; ?></p>
+			<p class="text-xl text-center leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto"><?php echo $fase_pertanaman_utama["kesulitan_desc"]; ?></p>
 
 
 			<?php
@@ -111,7 +111,7 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 			<div class="text-center mb-5">
 				<h1 class="text-3xl font-bold title-font mb-4 text-green-800 text-center">Masalah Seputar
 				<?php echo $fase_growth_utama["fase_growth_nama"]; ?></h1>
-				<p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Masalah yang sering dialami oleh sebagian besar
+				<p class="text-xl leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Masalah yang sering dialami oleh sebagian besar
 					pelaku saat melakukan tahap <?php echo $fase_growth_utama["fase_growth_nama"]; ?> tanaman</p>
 			</div>
 			<div class="grid grid-cols-2 lg:w-4/5 sm:mx-auto sm:mb-2 mx-4 px-4">
@@ -142,7 +142,7 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 			<div class="text-center mb-5">
 				<h1 class="text-3xl font-bold title-font mb-4 text-green-800 text-center">Pertanyaan Seputar
 				<?php echo $fase_growth_utama["fase_growth_nama"]; ?></h1>
-				<p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Pertanyaan yang sering diajukan oleh sebagian
+				<p class="text-xl leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Pertanyaan yang sering diajukan oleh sebagian
 					besar pelaku saat melakukan tahap <?php echo $fase_growth_utama["fase_growth_nama"]; ?> tanaman</p>
 			</div>
 			<div class="grid grid-cols-2 lg:w-4/5 sm:mx-auto sm:mb-2 mx-4 px-4">

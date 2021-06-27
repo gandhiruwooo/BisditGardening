@@ -79,6 +79,9 @@ $alats = query("SELECT * FROM alat WHERE kategori_alat_id=$id LIMIT $data_awal,$
 		<div class="flex justify-center"><button class="p-2 border w-1/4 rounded-md bg-green-900 text-white">Search</button></div>
 	</div>
 </div>
+
+<!--Judul-->
+<h1 class=" text-center text-gray-900 text-3xl title-font font-medium mb-1 py-2 pt-10"><b>Daftar <?php echo $kategori_alats["kategori_alat_nama"]; ?></b></h1>
 		<!--Pagination-->
 		<?php if ($total_data<=$jumlah_data){} else{?>
 		<?php $i = $halaman_aktif ;?>  
@@ -114,7 +117,6 @@ $alats = query("SELECT * FROM alat WHERE kategori_alat_id=$id LIMIT $data_awal,$
     <?php }?>
 		<!--End Of Pagination-->
     <!--daftar alat berkebun-->
-      <h1 class=" text-center text-gray-900 text-3xl title-font font-medium mb-1 py-2 pt-10"><b>Daftar <?php echo $kategori_alats["kategori_alat_nama"]; ?></b></h1>
       <div class="flex items-center justify-center">
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
 		<?php foreach ($alats as $alat) { ?>

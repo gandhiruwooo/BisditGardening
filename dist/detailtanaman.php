@@ -155,16 +155,16 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
       <h1 class="text-lg text-center text-green-800 md:text-3xl font-bold mb-2">Galeri Tanaman</h1>
     </div>
 
-    <div class="container my-4 mx-auto  md:px-10 justify-center">
+    <div class="container my-4 mx-auto md:px-10 justify-center">
       <div class="flex flex-wrap -mx-1 lg:-mx-4 justify-center">
           <?php foreach ($foto_tanamans as $foto_tanaman) { ?>
           <!-- Column -->
           <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
             <!-- Article -->
             <article class="overflow-hidden rounded-lg shadow-lg border-green-600 border-opacity-50 border-2 border-solid">
-                    <img class="object-fill h-60 w-full" src="<?php echo $foto_tanaman["foto_url"]; ?>">
+                    <img class="object-cover md:object-cover h-60 w-full" src="<?php echo $foto_tanaman["foto_url"]; ?>">
                 <header class="flex h-16 bg-green-800 items-center justify-between leading-tight p-2 md:p-4">
-                    <h1 class="text-xl text-white text-center font-bold"><?php echo $foto_tanaman["foto_desc"]; ?></h1>
+                    <h1 class="text-base md:text-base text-white text-center font-bold"><?php echo $foto_tanaman["foto_desc"]; ?></h1>
                   </header>
             </article>
           </div>

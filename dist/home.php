@@ -172,22 +172,18 @@ $galeri_tanamans = query("SELECT * FROM galeri_tanaman WHERE galeri_pajangan_id=
 </div>
 </div>
 <!-- telusuri alat berkebun-->
-<div class="pt-16 pb-10">
+<div class="container pt-16 pb-10">
     <h1 class="text-3xl text-center text-green-800 md:text-3xl font-bold mb-2">Cari Alat Berkebun</h1>
     <div class="pt-6 flex items-center justify-center">
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
             <?php foreach ($kategori_alatq as $kategori_alat) { ?>
             <a href="carialat.php?id=<?php echo $kategori_alat["kategori_alat_id"]?>">
-            <div class="relative bg-green-800 rounded-3xl w-34 my-4 shadow-xl transition-colors duration-150 hover:bg-yellow-800">
-                <div class="mt-8">
                     <div class="flex">
-                        <p class="inline-flex text-right items-center h-14 px-14 m-2 text-lg text-gray-50 font-bold"> <?php echo $kategori_alat["kategori_alat_nama"]?> </p>
-                    </div>
-                </div>
-            </div>  
+                        <p class="inline-flex text-center items-center h-16 px-28 m-auto text-lg font-bold text-white transition-colors duration-150 bg-green-800 rounded-lg focus:shadow-outline  hover:bg-yellow-800"> <?php echo $kategori_alat["kategori_alat_nama"]?> </p>
+                    </div> 
             </a> 
             <?php } ?>
-    </div>
+        </div>
     </div>
 </div>
 <!-- telusuri mitra-->

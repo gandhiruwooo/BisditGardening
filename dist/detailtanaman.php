@@ -580,16 +580,18 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
       <div class="grid md:grid-cols-2 m-5 mb-5">
         <div class="bg-green-100 overflow-hidden m-5 p-5 rounded shadow-lg">
           <div class="m-2 text-justify text-sm">
-            <h2 class="font-bold text-xl h-2 mb-8 text">Kelebihan</h2><br>
+            <h2 class="font-bold text-xl h-2 mb-8 text-green-800">Kelebihan</h2><br>
             <?php foreach ($kelebihans as $kelebihan) { ?>
-            <div class="mb-3">
+            <div class="mb-4">
               <div class="pb-6 md:pb-0 flex flex-col">
                 <div>
-                    <label class="bg-white input-field inline-flex items-baseline border-none shadow-md bg-white p-4 rounded">
-                    <span class="flex-none text-dusty-blue-darker select-none leading-none">
+                    <!-- <label class="bg-white input-field inline-flex items-baseline border-none shadow-md bg-white p-4 rounded"> -->
+                    <ul class="list-disc">
+                      <li ><p class="flex-none text-dusty-blue-darker select-none leading-none text-green-600 font-bold">
                       <?php echo $kelebihan["kelebihan"]; ?>
-                    </span>
-                    </label>
+                      </p></li>
+                    </ul>
+                    <!-- </label> -->
                 </div>
               </div>
             </div>
@@ -598,13 +600,17 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
         </div>
         <div class="bg-pink-200 overflow-hidden m-5 p-5 rounded shadow-lg">
           <div class="m-2 text-justify text-sm">
-            <h2 class="font-bold text-xl h-2 mb-8">Kekurangan</h2><br>
+            <h2 class="font-bold text-xl h-2 mb-8 text-red-800">Kekurangan</h2><br>
             <?php foreach ($kekurangans as $kekurangan) { ?>
-            <div class="mb-3">
+            <div class="mb-4">
               <div class="pb-6 md:pb-0 flex flex-col">
-                <div><label
-                    class="bg-white input-field inline-flex items-baseline border-none shadow-md bg-white p-4 rounded"><span
-                      class="flex-none text-dusty-blue-darker select-none leading-none"><?php echo $kekurangan["kekurangan"]; ?></span></label></div>
+                <div>
+                  <ul class="list-disc">
+                    <li><p class="flex-none text-dusty-blue-darker select-none leading-none text-red-600 font-bold">
+                        <?php echo $kekurangan["kekurangan"]; ?>
+                    </p></li>
+                  </ul>
+                </div>
               </div>
             </div>
             <?php } ?>
@@ -620,14 +626,16 @@ if (empty($khasiats)){} else{?>
 <div class="lg:p-80 lg:pb-10 lg:pt-10 pb-10 pt-10">
     <div class="bg-orange-200 overflow-hidden m-5 p-5 rounded shadow-lg">
       <div class="m-2 text-justify text-sm">
-        <h2 class="font-bold text-xl h-2 mb-8 text">Khasiat</h2><br>
+        <h2 class="font-bold text-xl h-2 mb-8 text-orange-800">Khasiat</h2><br>
         <?php foreach ($khasiats as $khasiat) { ?>
-        <div class="mb-3">
+        <div class="mb-4">
           <div class="pb-6 md:pb-0 flex flex-col">
-            <div><label
-                class="bg-white input-field inline-flex items-baseline border-none shadow-md bg-white p-4 rounded"><span
-                  class="flex-none text-dusty-blue-darker select-none leading-none"> <?php echo $khasiat["khasiat"]; ?>
-                  </span></label>
+            <div>
+              <ul class="list-disc">
+                <li><p class="flex-none text-dusty-blue-darker select-none leading-none text-orange-600 font-bold">
+                    <?php echo $khasiat["khasiat"]; ?>
+                </p></li>
+              </ul>
             </div>
           </div>
         </div>

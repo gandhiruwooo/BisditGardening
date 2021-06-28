@@ -79,13 +79,13 @@ $tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id LIMIT $da
           </div>
         </div>
       </div>
-      <div class="flex justify-center"><button class="p-2 border w-1/4 rounded-md bg-green-900 text-white">Search</button></div>
+      <div class="flex justify-center"><button class="p-2 border w-1/4 rounded-md bg-green-900 text-white">Cari</button></div>
     </div>
   </div>
 
 
 <!--Judul-->
-<h1 class=" text-center text-gray-900 text-3xl title-font font-medium mb-1 py-2 pt-10"><b><?php echo $kategori_tanamans["kategori_tanaman_nama"] ?></b></h1>
+<h1 class=" text-center text-green-900 text-3xl title-font font-medium mb-1 py-2 pt-10"><b><?php echo $kategori_tanamans["kategori_tanaman_nama"] ?></b></h1>
 
 		<!--Pagination-->
     <?php if ($total_data<=$jumlah_data){} else{?>

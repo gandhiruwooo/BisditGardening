@@ -23,12 +23,6 @@
           <a class="opacity-100" href="caritanaman.php?id=1">Tanaman</a>
           <a class="opacity-100" href="carialat.php?id=1">Alat Berkebun</a>
         </div>
-        <div class="w-full sm:w-1/5 pt-6 flex items-end mb-1">
-          <div class="flex flex-row space-x-4">
-            <i class="fab fa-whatsapp"></i>
-            <i class="fab fa-google"></i>
-          </div>
-        </div>
       </div>
       <div class="opacity-100 pt-2">
         <p>© 2021 Tim Gardening Bisnis Digital.</p>

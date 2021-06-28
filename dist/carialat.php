@@ -89,7 +89,7 @@ $alats = query("SELECT * FROM alat WHERE kategori_alat_id=$id LIMIT $data_awal,$
 		<ul class="flex">
 		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i-1?>">	
 		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-				<span class="mx-1">previous</span>
+				<span class="mx-1">Sebelumnya</span>
 		</li>
 		</a>
 		<?php for($i=1 ; $i <= $jumlah_pagination; $i++):?>
@@ -110,7 +110,7 @@ $alats = query("SELECT * FROM alat WHERE kategori_alat_id=$id LIMIT $data_awal,$
 		<?php endfor;?>
 		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i?>">	
 		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-				<span class="mx-1">Next</span>
+				<span class="mx-1">Selanjutnya</span>
 		</li></a>
 		</ul>
     	</div>
@@ -184,7 +184,7 @@ $alats = query("SELECT * FROM alat WHERE kategori_alat_id=$id LIMIT $data_awal,$
 		<ul class="flex">
 		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i-1?>">	
 		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-				<span class="mx-1">previous</span>
+				<span class="mx-1">Sebelumnya</span>
 		</li>
 		</a>
 		<?php for($i=1 ; $i <= $jumlah_pagination; $i++):?>
@@ -205,7 +205,7 @@ $alats = query("SELECT * FROM alat WHERE kategori_alat_id=$id LIMIT $data_awal,$
 		<?php endfor;?>
 		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i?>">	
 		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-				<span class="mx-1">Next</span>
+				<span class="mx-1">Selanjutnya</span>
 		</li></a>
 		</ul>
     	</div>

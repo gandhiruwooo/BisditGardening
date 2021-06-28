@@ -85,7 +85,7 @@ $tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id LIMIT $da
 
 
 <!--Judul-->
-<h1 class=" text-center text-gray-900 text-3xl title-font font-medium mb-1 py-2 pt-10"><b><?php echo $kategori_tanamans["kategori_tanaman_nama"] ?></b></h1>
+<h1 class=" text-center text-green-900 text-3xl title-font font-medium mb-1 py-2 pt-10"><b><?php echo $kategori_tanamans["kategori_tanaman_nama"] ?></b></h1>
 
 		<!--Pagination-->
     <?php if ($total_data<=$jumlah_data){} else{?>
@@ -94,7 +94,7 @@ $tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id LIMIT $da
 		<ul class="flex">
 		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i-1?>">	
 		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-				<span class="mx-1">previous</span>
+				<span class="mx-1">Sebelumnya</span>
 		</li>
 		</a>
 		<?php for($i=1 ; $i <= $jumlah_pagination; $i++):?>
@@ -115,7 +115,7 @@ $tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id LIMIT $da
 		<?php endfor;?>
 		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i?>">	
 		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-				<span class="mx-1">Next</span>
+				<span class="mx-1">Selanjutnya</span>
 		</li></a>
 		</ul>
     	</div>
@@ -189,7 +189,7 @@ $tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id LIMIT $da
 		<ul class="flex">
 		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i-1?>">	
 		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-				<span class="mx-1">previous</span>
+				<span class="mx-1">Sebelumnya</span>
 		</li>
 		</a>
 		<?php for($i=1 ; $i <= $jumlah_pagination; $i++):?>
@@ -210,7 +210,7 @@ $tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id LIMIT $da
 		<?php endfor;?>
 		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i?>">	
 		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
-				<span class="mx-1">Next</span>
+				<span class="mx-1">Selanjutnya</span>
 		</li></a>
 		</ul>
     	</div>

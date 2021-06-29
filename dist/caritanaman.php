@@ -7,7 +7,20 @@ require 'layout/function.php';
 
 $id = $_GET["id"];
 
-$tanaman_all = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id");
+if(isset($_GET["indoor"])){
+  $indoor = $_GET["indoor"];
+}else{$indoor = "";}
+var_dump($indoor);
+
+
+if(isset($_GET["name"])){
+  $name = $_GET["name"];
+}else{$name = "";}
+var_dump($name);
+
+
+
+$tanaman_all = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id AND indoorflag LIKE '%$indoor%' AND tanaman_nama LIKE '%$name%'");
 $kategori_tanamans = query("SELECT * FROM kategori_tanaman WHERE kategori_tanaman_id=$id")[0];
 
 //pagination
@@ -33,7 +46,7 @@ echo $halaman_aktif;
 $data_awal = ($halaman_aktif * $jumlah_data ) - $jumlah_data;
 echo $data_awal;
 
-$tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id LIMIT $data_awal,$jumlah_data");
+$tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id AND indoorflag LIKE '%$indoor%' AND tanaman_nama LIKE '%$name%' LIMIT $data_awal,$jumlah_data");
 
 //end pagination
 ?>
@@ -46,41 +59,27 @@ $tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id LIMIT $da
 <?php include_once 'layout/navbar.php';?>
   <!-- Search Filter -->
   <div class="container h-500 mx-auto flex justify-center items-center p-2 md:pt-16">
-    <div class="border border-gray-100 p-6 grid grid-cols-1 gap-6 bg-white shadow-lg rounded-lg">
+    <form class="border border-gray-100 p-6 grid grid-cols-1 gap-6 bg-white shadow-lg rounded-lg" action="caritanaman.php?id=<?php $id;?>">
       <div class="flex flex-col md:flex-row">
         <div class="">
-          <select class="border p-2 rounded">
-            <option>Tanaman Indoor</option>
-            <option>Tanaman Outdoor</option>
-          </select>
-        </div>
-        <div class="pt-6 md:pt-0 md:pl-6">
-          <select class="border p-2 rounded">
-            <option>Mitra 1</option>
-            <option>Mitra 2</option>
-            <option>Mitra 3</option>
-            <option>Mitra 4</option>
-          </select>
-        </div>
-        <div class="pt-6 md:pt-0 md:pl-6">
-          <select class="border p-2 rounded">
-            <option>Ruang Sempit</option>
-            <option>Pekarangan</option>
-            <option>Kesehatan</option>
-            <option>Hadiah</option>
+        <input type="hidden" name="id" value="<?php echo $id ?>">
+          <select name="indoor" class="border p-2 rounded">
+            <option value="1">Tanaman Indoor</option>
+            <option value="0">Tanaman Outdoor</option>
+            <option value="2">Tanaman Indoor & Outdoor</option>
           </select>
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
         <div class="grid grid-cols-1 gap-2 border border-gray-200 p-2 rounded">
           <div class="flex border rounded bg-gray-300 items-center p-2 ">
-            <input type="text" placeholder="Enter text here..."
+            <input type="text" name="name" placeholder="Enter text here..."
                  class="bg-gray-300 max-w-full focus:outline-none text-gray-700"/>
           </div>
         </div>
       </div>
-      <div class="flex justify-center"><button class="p-2 border w-1/4 rounded-md bg-green-900 text-white">Cari</button></div>
-    </div>
+      <div class="flex justify-center"><button type="submit" class="p-2 border w-1/4 rounded-md bg-green-900 text-white">Cari</button></div>
+    </form>
   </div>
 
 
@@ -144,6 +143,7 @@ $tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id LIMIT $da
                       <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
                       <path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z"/>
                       </svg>
+                      <p><?php echo $tanaman["rerata_harga"]; ?></p>
                   </div>
                   <div class="flex space-x-2 text-black-400 text-sm my-3">
                       <!-- svg -->

@@ -129,9 +129,10 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
             </div>
               <h1 class="text-black-100 text-2xl text-left font-bold"><?php echo $tanamans["tanaman_nama"]; ?></h1>
               
-              <?php if (empty($harga_tanamans)){} else { 
-              $harga_tanaman_rerata = query("SELECT AVG(harga) FROM harga_tanaman WHERE tanaman_id=$id")[0];?>
-              <p class=" text-gray-600 text-2xl text-left">Rp.<?php echo $harga_tanaman_rerata["AVG(harga)"]; ?> </p>
+              <?php if (empty($tanamans["rerata_harga"])){} else { 
+              ?>
+              <p class=" text-gray-600 text-2xl text-left"><?php echo $tanamans["rerata_harga"]; ?> </p>
+              <p class=" text-left"><?php echo $tanamans["ket_harga"]; ?> </p>
               <?php }?>
               <div class='px-5 py-3'>
                 <h3 class="font-bold text-xs text-center">FUNGSI TANAMAN</h3>

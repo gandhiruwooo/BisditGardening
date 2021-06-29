@@ -108,7 +108,7 @@ $alats = query("SELECT * FROM alat WHERE kategori_alat_id=$id LIMIT $data_awal,$
 		</a>
 		<?php endif; ?>
 		<?php endfor;?>
-		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i?>">	
+		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$halaman_aktif+1?>">	
 		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
 				<span class="mx-1">Selanjutnya</span>
 		</li></a>
@@ -203,7 +203,7 @@ $alats = query("SELECT * FROM alat WHERE kategori_alat_id=$id LIMIT $data_awal,$
 		</a>
 		<?php endif; ?>
 		<?php endfor;?>
-		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$i?>">	
+		<a class="flex items-center font-bold" href="?id=<?= $id?>&halaman=<?=$halaman_aktif+1?>">	
 		<li class="mx-1 px-3 py-2 bg-gray-200 text-green-900 hover:bg-green-900 hover:text-gray-200 rounded-lg">
 				<span class="mx-1">Selanjutnya</span>
 		</li></a>

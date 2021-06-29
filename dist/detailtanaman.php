@@ -259,8 +259,10 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
                   </dt>
                   <dd class="mt-2 ml-16 text-left font-extrabold text-blue-500 h-36">
                   <br>
-                    <?php echo $tanamans["frek_penyiraman_cerah"]; ?>
-                    <?php echo $tanamans["frek_penyiraman_hujan"]; ?>
+                  <i class="far fa-sun sm:text-3xl"></i>&nbsp &nbsp<?php echo $tanamans["frek_penyiraman_cerah"]; ?>
+                  <br>
+                  <br>
+                  <i class="fas fa-cloud-rain sm:text-2xl">&nbsp &nbsp</i><?php echo $tanamans["frek_penyiraman_hujan"]; ?>
                   </dd>
                   <dt>
                     <div class="bg-green-100 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">

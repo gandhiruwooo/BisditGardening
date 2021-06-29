@@ -43,15 +43,52 @@ $galeri_pajangans = query("SELECT * FROM galeri_pajangan LIMIT $data_awal,$jumla
 
 <?php include_once 'layout/navbar.php';?>
 
-<!-- galeri pajangan -->
-<div class="pt-16"> 
-  <div class="grid grid-cols-1 gap-6 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
-    <a href="home.php">
+<!--back button-->
+<div class="pt-16">
+	<a href="home.php">
       <button class="bg-green-800 hover:bg-yellow-800 text-white font-bold py-2 px-4 mx-32 mb-10 rounded-full"> Kembali 
       </button>
     </a>
-    <h1 class="text-3xl text-center text-green-800 md:text-3xl font-bold mb-2">  Galeri Pajangan Tanaman </h1>
 </div>
+  <!-- Search Filter -->
+  <div class="container h-500 mx-auto flex justify-center items-center p-2 md:pt-0">
+	<div class="border border-gray-100 p-6 grid grid-cols-1 gap-6 bg-white shadow-lg rounded-lg">
+		<div class="flex flex-col md:flex-row">
+			<div class="pt-6 md:pt-0 md:pl-6">
+				<select class="border p-2 rounded">
+					<option>Tanaman Hias</option>
+					<option>Tanaman Buah</option>
+					<option>Tanaman Sayur</option>
+					<option>Tanaman TOGA</option>
+				</select>
+			</div>
+			<div class="pt-6 md:pt-0 md:pl-6">
+				<select class="border p-2 rounded">
+					<option>Ruang Sempit</option>
+					<option>Pekarangan</option>
+					<option>Kesehatan</option>
+					<option>Hadiah</option>
+				</select>
+			</div>
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+			<div class="grid grid-cols-1 gap-2 border border-gray-200 p-2 rounded">
+				<div class="flex border rounded bg-gray-300 items-center p-2 ">
+					<input type="text" placeholder="Enter text here..."
+						   class="bg-gray-300 max-w-full focus:outline-none text-gray-700"/>
+				</div>
+			</div>
+		</div>
+		<div class="flex justify-center"><button class="p-2 border w-1/4 rounded-md bg-green-900 text-white">Cari</button></div>
+	</div>
+</div>
+
+<!-- galeri pajangan -->
+<div class="pt-16 pb-16"> 
+<h1 class="text-3xl text-center text-green-800 md:text-3xl font-bold mb-2 pb-10"> Galeri Pajangan Tanaman </h1>
+  <!--<div class="grid grid-cols-1 gap-6 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
+	</div>
+</div>-->
 
 		<!--Pagination-->
 		<?php if ($total_data<=$jumlah_data){} else{?>

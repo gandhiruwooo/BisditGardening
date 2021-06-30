@@ -19,9 +19,23 @@ if(isset($_GET["name"])){
 var_dump($name);
 
 
+if(isset($_GET["daerah"])){
+  $daerah = $_GET["daerah"];
+}else{$daerah = "";}
+var_dump($daerah);
 
-$tanaman_all = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id AND indoorflag LIKE '%$indoor%' AND tanaman_nama LIKE '%$name%'");
+if(isset($_GET["penempatan"])){
+  $penempatan = $_GET["penempatan"];
+}else{$penempatan = "";}
+var_dump($penempatan);
+
+
+$tanaman_all = query("SELECT * FROM tanaman  WHERE kategori_tanaman_id=$id AND indoorflag LIKE '%$indoor%' AND tanaman_nama LIKE '%$name%' AND daerah_id LIKE '%$daerah%' AND penempatan_id LIKE '%$penempatan%'");
 $kategori_tanamans = query("SELECT * FROM kategori_tanaman WHERE kategori_tanaman_id=$id")[0];
+$daerahs = query("SELECT * FROM daerah");
+$penempatans = query("SELECT * FROM penempatan");
+
+
 
 //pagination
 $jumlah_data = 8;
@@ -46,7 +60,7 @@ echo $halaman_aktif;
 $data_awal = ($halaman_aktif * $jumlah_data ) - $jumlah_data;
 echo $data_awal;
 
-$tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id AND indoorflag LIKE '%$indoor%' AND tanaman_nama LIKE '%$name%' LIMIT $data_awal,$jumlah_data");
+$tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id AND indoorflag LIKE '%$indoor%' AND tanaman_nama LIKE '%$name%' AND daerah_id LIKE '%$daerah%' AND penempatan_id LIKE '%$penempatan%' LIMIT $data_awal,$jumlah_data");
 
 //end pagination
 ?>
@@ -64,12 +78,31 @@ $tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id AND indoo
         <div class="">
         <input type="hidden" name="id" value="<?php echo $id ?>">
           <select name="indoor" class="border p-2 rounded">
+            <option value="">Cari Indoor atau Outdoor</option>
             <option value="1">Tanaman Indoor</option>
             <option value="0">Tanaman Outdoor</option>
             <option value="2">Tanaman Indoor & Outdoor</option>
           </select>
         </div>
+        <div class="">
+          <select name="daerah" class="border p-2 rounded">
+          <option value="">Cari Daerah </option>
+            <?php foreach ($daerahs as $daerah) { ?>
+            <option value="<?php echo $daerah["daerah_id"]?>"><?php echo $daerah["daerah_nama"]?></option>
+            <?php } ?>
+          </select>
+        </div>
+        <div class="">
+          <select name="penempatan" class="border p-2 rounded">
+          <option value="">Cari Penempatan </option>
+            <?php foreach ($penempatans as $penempatan) { ?>
+            <option value="<?php echo $penempatan["penempatan_id"]?>"><?php echo $penempatan["penempatan_nama"]?></option>
+            <?php } ?>
+          </select>
+        </div>
       </div>
+
+
       <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
         <div class="grid grid-cols-1 gap-2 border border-gray-200 p-2 rounded">
           <div class="flex border rounded bg-gray-300 items-center p-2 ">

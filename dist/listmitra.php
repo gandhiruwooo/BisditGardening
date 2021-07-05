@@ -11,7 +11,7 @@ require 'layout/function.php';?>
 <?php include_once 'layout/navbar.php';?>
 
 <!--List Mitra-->
-    <h1 class=" text-center text-gray-900 text-3xl title-font font-medium mb-1 py-1 pt-16"><b>List Mitra</b></h1>
+    <h1 class=" text-center text-green-900 text-3xl title-font font-medium mb-1 py-1 pt-16"><b>Daftar Mitra</b></h1>
   <div class="container mx-auto my-5 p-5">
     <div class=" md:flex no-wrap md:-mx-2 ">
         <?php foreach ($mitraq as $mitra) { ?>

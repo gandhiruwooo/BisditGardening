@@ -69,7 +69,7 @@ var_dump($mitra)
             <!-- Profile tab -->
             <!-- About Section -->
             <div class="bg-white p-3 shadow-sm rounded-sm">
-              <h1 class="text-gray-900 font-bold text-xl text-center leading-8 my-1 ">Tanaman Yang Tersedia</h1>
+              <h1 class="text-green-900 font-bold text-xl text-center leading-8 my-1 ">Tanaman Yang Tersedia</h1>
               <!--Card Tanaman-->
               <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
                 <?php 
@@ -133,7 +133,7 @@ var_dump($mitra)
               <!-- End Of Card Tanaman-->
             </div>  
             <div class="bg-white p-3 shadow-sm rounded-sm">
-              <h1 class="text-gray-900 font-bold text-xl text-center leading-8 my-1 ">Alat Berkebun Yang Tersedia</h1>
+              <h1 class="text-green-900 font-bold text-xl text-center leading-8 my-1 ">Alat Berkebun Yang Tersedia</h1>
               <!--Card Alat Berkebun-->
                     
               <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">

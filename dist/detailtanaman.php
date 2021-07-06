@@ -97,8 +97,8 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
     <div class="md:grid grid-cols-12 gap-2">
       <div class="md:col-start-2 col-end-3 flex justify-center py-16">
         <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-black">
-          <a href="https://www.twitter.com">
-            <em class="fas fa-share-alt sm:text-2xl">&nbsp;</em>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <em class="sm:text-4xl">&nbsp;</em>
           </a>
         </div>
       </div>

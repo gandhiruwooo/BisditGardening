@@ -229,7 +229,10 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
                     <?php echo $tanamans["jenis_pupuk_1"]; ?> : <?php echo $tanamans["frek_pemupukan_1"]; ?> 
                     <br>
                     <br>
-                    <?php echo $tanamans["jenis_pupuk_2"]; ?> : <?php echo $tanamans["frek_pemupukan_2"]; ?> <br>
+                    <?php if(empty($tanamans["jenis_pupuk_2"])){} else { ?>
+                    <?php echo $tanamans["jenis_pupuk_2"]; ?> : <?php echo $tanamans["frek_pemupukan_2"]; ?> 
+                    <?php }?>
+                    <br>
 
                     <!-- <br>
               Pupuk Daun : 1 kali/Minggu<br>
@@ -263,8 +266,9 @@ $fungsi_pertanamans = query("SELECT * FROM fungsi_pertanaman WHERE tanaman_id=$i
                   <i class="far fa-sun sm:text-3xl"></i>&nbsp &nbsp<?php echo $tanamans["frek_penyiraman_cerah"]; ?>
                   <br>
                   <br>
+                  <?php if(empty($tanamans["frek_penyiraman_hujan"])){} else { ?>
                   <i class="fas fa-cloud-rain sm:text-2xl">&nbsp &nbsp</i><?php echo $tanamans["frek_penyiraman_hujan"]; ?>
-                  </dd>
+                  <?php } ?></dd>
                   <dt>
                     <div class="bg-green-100 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
                       <h3 class="font-semibold text-lg mb-1">Kesimpulan</h3>

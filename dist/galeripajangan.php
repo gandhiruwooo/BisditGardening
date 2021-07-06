@@ -13,9 +13,6 @@ $total_data = count($galeri_pajangan_all);
 $jumlah_pagination = ceil($total_data / $jumlah_data);
 
 
-echo $jumlah_data;
-echo $total_data;
-echo $jumlah_pagination;
 
 
 
@@ -25,10 +22,8 @@ if (isset($_GET['halaman'])){
 } else { $halaman_aktif = 1;}
 
 $i=$halaman_aktif;
-echo $halaman_aktif;
 
 $data_awal = ($halaman_aktif * $jumlah_data ) - $jumlah_data;
-echo $data_awal;
 
 $galeri_pajangans = query("SELECT * FROM galeri_pajangan LIMIT $data_awal,$jumlah_data");
 
@@ -50,38 +45,7 @@ $galeri_pajangans = query("SELECT * FROM galeri_pajangan LIMIT $data_awal,$jumla
       </button>
     </a>
 </div>
-  <!-- Search Filter -->
-  <div class="container h-500 mx-auto flex justify-center items-center p-2 md:pt-0">
-	<div class="border border-gray-100 p-6 grid grid-cols-1 gap-6 bg-white shadow-lg rounded-lg">
-		<div class="flex flex-col md:flex-row">
-			<div class="pt-6 md:pt-0 md:pl-6">
-				<select class="border p-2 rounded">
-					<option>Tanaman Hias</option>
-					<option>Tanaman Buah</option>
-					<option>Tanaman Sayur</option>
-					<option>Tanaman TOGA</option>
-				</select>
-			</div>
-			<div class="pt-6 md:pt-0 md:pl-6">
-				<select class="border p-2 rounded">
-					<option>Ruang Sempit</option>
-					<option>Pekarangan</option>
-					<option>Kesehatan</option>
-					<option>Hadiah</option>
-				</select>
-			</div>
-		</div>
-		<div class="grid grid-cols-1 md:grid-cols-1 gap-4">
-			<div class="grid grid-cols-1 gap-2 border border-gray-200 p-2 rounded">
-				<div class="flex border rounded bg-gray-300 items-center p-2 ">
-					<input type="text" placeholder="Enter text here..."
-						   class="bg-gray-300 max-w-full focus:outline-none text-gray-700"/>
-				</div>
-			</div>
-		</div>
-		<div class="flex justify-center"><button class="p-2 border w-1/4 rounded-md bg-green-900 text-white">Cari</button></div>
-	</div>
-</div>
+
 
 <!-- galeri pajangan -->
 <div class="pt-16 pb-16"> 

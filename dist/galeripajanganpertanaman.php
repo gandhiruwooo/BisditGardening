@@ -97,7 +97,6 @@ $galeri_tanamans = query("SELECT * FROM galeri_tanaman WHERE tanaman_id=$id LIMI
       <?php foreach ($galeri_tanamans as $galeri_tanaman){ 
         $galeri_pajangan_id = $galeri_tanaman["galeri_pajangan_id"];
         $galeri_pajangan = query("SELECT * FROM galeri_pajangan WHERE galeri_pajangan_id=$galeri_pajangan_id")[0];
-        var_dump($galeri_pajangan);
         ?>
       <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
           <!-- Article -->

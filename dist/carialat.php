@@ -10,7 +10,7 @@ $id = $_GET["id"];
 if(isset($_GET["name"])){
 	$name = $_GET["name"];
   }else{$name = "";}
-  var_dump($name);
+
 
 $alat_all = query("SELECT * FROM alat WHERE kategori_alat_id=$id AND alat_nama LIKE '%$name%'");
 $kategori_alats = query("SELECT * FROM kategori_alat WHERE kategori_alat_id=$id")[0];
@@ -21,9 +21,6 @@ $total_data = count($alat_all);
 $jumlah_pagination = ceil($total_data / $jumlah_data);
 
 
-echo $jumlah_data;
-echo $total_data;
-echo $jumlah_pagination;
 
 
 
@@ -33,10 +30,10 @@ if (isset($_GET['halaman'])){
 } else { $halaman_aktif = 1;}
 
 $i=$halaman_aktif;
-echo $halaman_aktif;
+
 
 $data_awal = ($halaman_aktif * $jumlah_data ) - $jumlah_data;
-echo $data_awal;
+
 
 $alats = query("SELECT * FROM alat WHERE kategori_alat_id=$id AND alat_nama LIKE '%$name%' LIMIT $data_awal,$jumlah_data");
 
@@ -118,14 +115,7 @@ $alats = query("SELECT * FROM alat WHERE kategori_alat_id=$id AND alat_nama LIKE
 					</div>
 						<p class="text-xl font-semibold my-2"><a href="detailalatkebun.php?id=<?= $alat["alat_id"];?>"><?php echo $alat["alat_nama"]; ?></a></p>
 						<div class="flex space-x-2 text-black-400 text-sm">
-							<!-- svg -->
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-								fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
-								<path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
-								<path
-									d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z" />
-							</svg>
-							<p>Rp 99.000 - 109.000</p>
+
 						</div>
 						<div class="flex space-x-2 text-black-400 text-sm my-3">
 							<!-- svg -->

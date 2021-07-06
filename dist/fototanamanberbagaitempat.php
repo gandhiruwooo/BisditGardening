@@ -11,14 +11,10 @@ $id = $_GET["id"];
 $foto_tanaman_all = query("SELECT * FROM foto_tanaman WHERE tanaman_id=$id");
 
 //pagination
-$jumlah_data = 1;
+$jumlah_data = 4;
 $total_data = count($foto_tanaman_all);
 $jumlah_pagination = ceil($total_data / $jumlah_data);
 
-
-echo $jumlah_data;
-echo $total_data;
-echo $jumlah_pagination;
 
 
 
@@ -28,10 +24,10 @@ if (isset($_GET['halaman'])){
 } else { $halaman_aktif = 1;}
 
 $i=$halaman_aktif;
-echo $halaman_aktif;
+
 
 $data_awal = ($halaman_aktif * $jumlah_data ) - $jumlah_data;
-echo $data_awal;
+
 
 $foto_tanamans = query("SELECT * FROM foto_tanaman WHERE tanaman_id=$id LIMIT $data_awal,$jumlah_data");
 //end pagination

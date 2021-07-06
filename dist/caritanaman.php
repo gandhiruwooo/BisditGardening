@@ -10,24 +10,24 @@ $id = $_GET["id"];
 if(isset($_GET["indoor"])){
   $indoor = $_GET["indoor"];
 }else{$indoor = "";}
-var_dump($indoor);
+
 
 
 if(isset($_GET["name"])){
   $name = $_GET["name"];
 }else{$name = "";}
-var_dump($name);
+
 
 
 if(isset($_GET["daerah"])){
   $daerah = $_GET["daerah"];
 }else{$daerah = "";}
-var_dump($daerah);
+
 
 if(isset($_GET["penempatan"])){
   $penempatan = $_GET["penempatan"];
 }else{$penempatan = "";}
-var_dump($penempatan);
+
 
 
 $tanaman_all = query("SELECT * FROM tanaman  WHERE kategori_tanaman_id=$id AND indoorflag LIKE '%$indoor%' AND tanaman_nama LIKE '%$name%' AND daerah_id LIKE '%$daerah%' AND penempatan_id LIKE '%$penempatan%'");
@@ -43,10 +43,6 @@ $total_data = count($tanaman_all);
 $jumlah_pagination = ceil($total_data / $jumlah_data);
 
 
-echo $jumlah_data;
-echo $total_data;
-echo $jumlah_pagination;
-
 
 
 if (isset($_GET['halaman'])){
@@ -55,10 +51,10 @@ if (isset($_GET['halaman'])){
 } else { $halaman_aktif = 1;}
 
 $i=$halaman_aktif;
-echo $halaman_aktif;
+
 
 $data_awal = ($halaman_aktif * $jumlah_data ) - $jumlah_data;
-echo $data_awal;
+
 
 $tanamans = query("SELECT * FROM tanaman WHERE kategori_tanaman_id=$id AND indoorflag LIKE '%$indoor%' AND tanaman_nama LIKE '%$name%' AND daerah_id LIKE '%$daerah%' AND penempatan_id LIKE '%$penempatan%' LIMIT $data_awal,$jumlah_data");
 

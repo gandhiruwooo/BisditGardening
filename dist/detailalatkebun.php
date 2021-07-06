@@ -11,12 +11,12 @@ $alats = query("SELECT * FROM alat WHERE alat_id=$id")[0];
 
 $kategori_alat_ids = $alats["kategori_alat_id"];
 
-$alatss = query("SELECT * FROM alat WHERE kategori_alat_id=$kategori_alat_ids");
+$alatss = query("SELECT * FROM alat WHERE kategori_alat_id=$kategori_alat_ids LIMIT 0,4");
 
 $kategori_alats = query("SELECT * FROM kategori_alat WHERE kategori_alat_id=$kategori_alat_ids")[0];
 
 $harga_alats = query("SELECT * FROM harga_alat WHERE alat_id=$id");
-var_dump($harga_alats);
+
 
 
 ?>
@@ -45,6 +45,7 @@ var_dump($harga_alats);
                   $mitras = query("SELECT * FROM mitra WHERE mitra_id=$mitra_id");
                   foreach ($mitras as $mitra) {                 
                 ?>
+              <a href="profilmitra.php?id=<?= $mitra["mitra_id"];?>">
               <div class="bg-gray-100 border-green-600 dark:bg-gray-800 bg-opacity-95 border-opacity-60  | p-4 border-solid  rounded-2xl border-2 | flex justify-around cursor-pointer | hover:bg-green-400 dark:hover:bg-green-600 hover:border-transparent | transition-colors duration-500">
                 <img class="w-16 h-16 object-cover" src="img\<?php echo $mitra["mitra_foto"]; ?>.jpg" alt="" />
                 <div class="flex flex-col justify-center">
@@ -53,6 +54,7 @@ var_dump($harga_alats);
                   <p class="text-black dark:text-gray-100 text-justify font-semibold"><?php echo $harga_alat["harga"]?></p>
                 </div>
               </div>
+                  </a>
               <!-- END SMALL CARD ROUNDED -->
               <?php }} ?>  
 
@@ -66,7 +68,9 @@ var_dump($harga_alats);
     <h1 class=" text-center text-green-800 text-3xl title-font font-medium mb-1 py-1"><b>Alat Sejenis</b></h1>
     <div class="flex items-center justify-center">
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
-        <?php foreach ($alatss as $alat) { ?>
+        <?php foreach ($alatss as $alat) {
+          if ($alat["alat_id"]==$id){}else{
+          ?>
           <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
             <div class="mt-8">
               <div class="flex space-x-2">
@@ -74,13 +78,6 @@ var_dump($harga_alats);
               </div>
               <p class="text-xl font-semibold my-2"><a href="detailalatkebun.html"><?php echo $alat["alat_nama"]?></a></p>
                 <div class="flex space-x-2 text-black-400 text-sm">
-                  <!-- svg -->
-                  <svg xmlns="<?php echo $alat["alat_gambar"]?>" width="16" height="16"
-                    fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
-                    <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
-                    <path
-                      d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z" />
-                  </svg>
                 </div>
                 <div class="flex space-x-2 text-black-400 text-sm my-3">
                   <!-- svg -->
@@ -93,7 +90,7 @@ var_dump($harga_alats);
                   <p><?php echo $kategori_alats["kategori_alat_nama"]?></p>
                 </div>
                 <div class="flex space-x-2 text-black-400 text-sm my-3"></div>
-                <button class="inline-flex text-white font-semibold bg-green-500 py-1 px-2 focus:outline-none hover:bg-green-600 rounded text-med tex" onclick="document.location='detailalatkebun.html'">Detail</button>
+                <button class="inline-flex text-white font-semibold bg-green-500 py-1 px-2 focus:outline-none hover:bg-green-600 rounded text-med tex" onclick="document.location='detailalatkebun.php?id=<?= $alat['alat_id'];?>'">Detail</button>
                 <br></br>
                 <div class="border-t-2"></div>
     
@@ -117,7 +114,7 @@ var_dump($harga_alats);
                 </div>
             </div>
           </div>
-        <?php } ?>
+        <?php }} ?>
         </div>
       </div>  
   </section>

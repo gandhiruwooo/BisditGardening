@@ -9,10 +9,10 @@ $id = $_GET["id"];
 $fase = $_GET["fase"];
 $tanamanid= $_GET["tanamanid"];
 
+
+
 $fase_pertanaman_utama = query("SELECT * FROM fase_pertanaman WHERE kategori_growth_id=$id AND fase_growth_id=$fase ")[0];
 $fase_pertanaman_utama_id = $fase_pertanaman_utama["fase_pertanaman_id"];
-var_dump($fase_pertanaman_utama_id);
-var_dump($fase);
 
 $fase_pertanamans = query("SELECT * FROM fase_pertanaman WHERE kategori_growth_id=$id");
 
@@ -161,67 +161,71 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 
 
 		<?php }?>
-				<?php if (empty($fase_pertanaman_alats)){} else {?>		
+				<?php if (empty($fase_pertanaman_alats)){} else {?>
 				<h1 class="text-2xl font-bold title-font text-green-800 text-center">Alat Yang Dibutuhkan</h1>
 				<div class="flex items-center justify-center">
-					<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
-						<!-- 1 card -->
-						<div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
-							<div class="mt-8">
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+				<?php
+					foreach ($fase_pertanaman_alats as $fase_pertanaman_alat){
+						$alat_id = $fase_pertanaman_alat["alat_id"];
+						$alat = query("SELECT * FROM alat WHERE alat_id=$alat_id")[0];
+					?>		
+				
+				<div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl transition-colors duration-150 hover:bg-green-100">
+			<a href="detailalatkebun.php?id=<?= $alat["alat_id"];?>">
+				<div class="mt-8">
+					<div class="flex space-x-2">
+						<img src="<?php echo $alat["alat_gambar"]; ?>" class="object-contain md:object-cover h-60 w-full" style="border-radius: 5%" />
+					</div>
+						<p class="text-xl font-semibold my-2"><a href="detailalatkebun.php?id=<?= $alat["alat_id"];?>"><?php echo $alat["alat_nama"]; ?></a></p>
+						<div class="flex space-x-2 text-black-400 text-sm">
+						</div>
+						<div class="flex space-x-2 text-black-400 text-sm my-3">
+							<!-- svg -->
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+								fill="currentColor" class="bi bi-pin-angle-fill"
+								viewBox="0 0 16 16">
+								<path
+									d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z" />
+							</svg>
+							<p><?php 
+							$kategori_alat_id = $alat["kategori_alat_id"];
+							$kategori_alat = query("SELECT * FROM kategori_alat WHERE kategori_alat_id = $kategori_alat_id")[0];
+							echo $kategori_alat["kategori_alat_nama"]; ?></p>
+						</div>
+						<div class="flex space-x-2 text-black-400 text-sm my-3"></div>
+						<div class="border-t-2"></div>
+
+						<div class="flex justify-between">
+							<div class="my-2">
 								<div class="flex space-x-2">
-									<img src="https://dummyimage.com/720x600" class="object-contain md:object-cover h-60 w-full" style="border-radius: 5%" />
-            					</div>
-									<p class="text-xl font-semibold my-2">Alat Kebun 1</p>
-									<div class="flex space-x-2 text-black-400 text-sm">
-										<!-- svg -->
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-											fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
-											<path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
-											<path
-												d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z" />
-										</svg>
-										<p>Rp 99.000 - 109.000</p>
-									</div>
-									<div class="flex space-x-2 text-black-400 text-sm my-3">
-										<!-- svg -->
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-											fill="currentColor" class="bi bi-pin-angle-fill" viewBox="0 0 16 16">
-											<path
-												d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z" />
-										</svg>
-										<p>Kategori alat</p>
-									</div>
-									<div class="flex space-x-2 text-black-400 text-sm my-3"></div>
-
-									<button class="inline-flex text-white bg-green-900 py-1 px-2 focus:outline-none hover:bg-green-700 rounded text-med tex" onclick="document.location='detailalatkebun.html'">Detail</button>
-									<br></br>
-									<div class="border-t-2"></div>
-
-									<div class="flex justify-between">
-										<div class="my-2">
-											<div class="flex space-x-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-													fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
-													<path
-														d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
-												</svg>
-												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-													fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-													<path
-														d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
-												</svg>
-											</div>
-										</div>
-									</div>
+									<svg xmlns="http://www.w3.org/2000/svg" width="16"
+										height="16" fill="currentColor" class="bi bi-share"
+										viewBox="0 0 16 16">
+										<path
+											d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+									</svg>
+									<svg xmlns="http://www.w3.org/2000/svg" width="16"
+										height="16" fill="currentColor" class="bi bi-heart"
+										viewBox="0 0 16 16">
+										<path
+											d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+									</svg>
 								</div>
 							</div>
-
-							
-					</div>
+						</div>
 				</div>
-				<?php }?>
+			</a>
+			</div>
+			<?php }}?>
+			</div>
+					</div>
+				
 
-				<?php if($fase=="4"){?>
+				<?php 
+				$galeri_tanaman = query("SELECT * FROM galeri_tanaman WHERE tanaman_id = $tanamanid");
+				if(empty($galeri_tanaman)){} else {
+				if($fase=="4"){?>
 		<div class="px-5 mt-10 mb-20 bg-gradient-to-tl to-blue-500 text-white font-semibold flex flex-col">
 			<h1 class="text-2xl font-bold title-font mb-4 text-green-800 text-center">Cari Tahu Referensi Koleksi Pajangan Tanaman</h1>
 			<div class="flex flex-row-reverse flex-wrap m-auto">
@@ -231,7 +235,7 @@ $fase_pertanaman_alats = query("SELECT * FROM fase_pertanaman_alat WHERE fase_pe
 				</button>
 			</div>
 		</div>
-		<?php } else {echo "1";}?>	
+		<?php } else {}}?>	
 </section>
     
 				  				<!--Footer-->

@@ -9,9 +9,14 @@ $id = $_GET["id"];
 
 $mitra = query("SELECT * FROM mitra WHERE mitra_id=$id")[0];
 
-$harga_tanamans = query("SELECT * FROM harga_tanaman WHERE mitra_id=$id");
-$harga_alats = query("SELECT * FROM harga_alat WHERE mitra_id=$id");
-var_dump($mitra)
+$harga_tanaman_asli = query("SELECT * FROM harga_tanaman WHERE mitra_id=$id");
+$harga_alat_asli = query("SELECT * FROM harga_alat WHERE mitra_id=$id");
+
+$harga_tanamans = query("SELECT * FROM harga_tanaman WHERE mitra_id=$id LIMIT 0,4");
+$harga_alats = query("SELECT * FROM harga_alat WHERE mitra_id=$id LIMIT 0,4");
+
+$jumlah_tanaman = count($harga_tanaman_asli);
+$jumlah_alat = count($harga_alat_asli);
 ?>
 
 
@@ -81,7 +86,8 @@ var_dump($mitra)
                     $kategori_tanamans = query("SELECT * FROM kategori_tanaman WHERE kategori_tanaman_id=$kategori_tanaman_id")[0]; 
                     $foto_tanamans = query("SELECT * FROM foto_tanaman WHERE tanaman_id=$tanaman_id")[0];
                 ?>
-                <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
+                <a href="detailtanaman.php?id=<?= $tanaman["tanaman_id"];?>">
+                <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl transition-colors duration-150 hover:bg-green-100">
                     <div class="mt-8">
                         <div class="flex space-x-2">
                             <img src="<?php echo $foto_tanamans["foto_url"]; ?>" 
@@ -127,12 +133,17 @@ var_dump($mitra)
                         </div>
                     </div>
                 </div>
+                  </a>
                 <?php }}?>
             </div>
-                <a class="text-center block w-full text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4" href="caritanaman.html">Cari Tanaman Selengkapnya</a>
+                <?php if($jumlah_tanaman > 4){?>
+                <a class="text-center block w-full text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4" href="tanamanmitra.php?id=<?php echo $id?>">Cari Tanaman Selengkapnya</a>
+                <?php } ?>
               <!-- End Of Card Tanaman-->
-            </div>  
+            </div>
+             
             <div class="bg-white p-3 shadow-sm rounded-sm">
+            <?php if(empty($harga_alats)){}else{ ?> 
               <h1 class="text-green-900 font-bold text-xl text-center leading-8 my-1 ">Alat Berkebun Yang Tersedia</h1>
               <!--Card Alat Berkebun-->
                     
@@ -145,7 +156,8 @@ var_dump($mitra)
                     $kategori_alat_id = $alat["kategori_alat_id"];
                     $kategori_alats = query("SELECT * FROM kategori_alat WHERE kategori_alat_id=$kategori_alat_id")[0];
                 ?>
-                <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
+                <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl transition-colors duration-150 hover:bg-green-100">
+			          <a href="detailalatkebun.php?id=<?= $alat["alat_id"];?>">
                     <div class="mt-8">
                       <div class="flex space-x-2">
                         <img src="<?php echo $alat["alat_gambar"] ?>" class="object-contain md:object-cover h-60 w-full" style="border-radius: 5%" />
@@ -194,11 +206,14 @@ var_dump($mitra)
                           </div>
                         </div>
                     </div>
-
+                  </a>
                   </div>
                   <?php }}?>
               </div>
-                <a class="text-center block w-full text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4" href="carialatberkebun.html">Cari Alat Berkebun Selengkapnya</a>
+              <?php if($jumlah_alat <= 4){ }else{ ?>
+              <a class="text-center block w-full text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4" href="alatmitra.php?id=<?php echo $id?>">Cari Alat Berkebun Selengkapnya</a>
+                    <?php }}?>
+
               <!-- End Of Card Tanaman-->
             </div>  
             </div>

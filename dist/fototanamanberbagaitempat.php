@@ -46,7 +46,7 @@ $foto_tanamans = query("SELECT * FROM foto_tanaman WHERE tanaman_id=$id LIMIT $d
 
 <div class="pt-16"> 
   <div class="grid grid-cols-1 gap-6 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
-    <a href="home.html">
+    <a href="home.php">
       <button class="bg-green-800 hover:bg-yellow-800 text-white font-bold py-2 px-4 mx-32 mb-10 rounded-full"> Kembali 
       </button>
     </a>
